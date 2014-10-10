@@ -8,8 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Payback::VERSION
   spec.authors       = ["Gustav"]
   spec.email         = ["gustav@invoke.se"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Retrieve conversions from affiliate networks}
   spec.homepage      = ""
   spec.license       = "MIT"
 
