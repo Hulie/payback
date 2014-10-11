@@ -40,12 +40,12 @@ module Payback
         )
         parse(res)
       end
-      
+
       def parse(res)
         Nokogiri::XML(res.read).css('commission').map do |node|
           Conversion.new(
             program: safe_extractor(node, 'advertiser-name'),
-            currency: '', # Note: All currencies are reporting in your functional currency.
+            currency: nil, # Note: All currencies are reporting in your functional currency.
             uid: safe_extractor(node, 'commission-id'),
             network: 'cj',
             epi: safe_extractor(node, 'sid'),

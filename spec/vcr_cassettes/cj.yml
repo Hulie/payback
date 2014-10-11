@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://commission-detail.api.cj.com/v3/commissions?date-type=event&end-date=2012-09-18&start-date=2012-09-17
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - <CJ_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Resin/3.1.8
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Sat, 11 Oct 2014 12:44:22 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <cj-api><commissions total-matched="1"><commission><action-status>closed</action-status><action-type>sale</action-type><aid>123</aid><commission-id>123456</commission-id><country></country><event-date>2012-09-17T01:51:07-0700</event-date><locking-date>2012-10-10</locking-date><order-id>12345</order-id><original>true</original><original-action-id>123456</original-action-id><posting-date>2012-09-17T03:00:13-0700</posting-date><website-id>555</website-id><action-tracker-id>12345</action-tracker-id><action-tracker-name>sale</action-tracker-name><cid>123</cid><advertiser-name>Kwik-E-Mart</advertiser-name><commission-amount>19.87</commission-amount><order-discount>0.00</order-discount><sid>abc123</sid><sale-amount>238.40</sale-amount></commission></commissions></cj-api>
+    http_version:
+  recorded_at: Sat, 11 Oct 2014 12:44:22 GMT
+recorded_with: VCR 2.9.3
