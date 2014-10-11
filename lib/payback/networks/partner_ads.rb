@@ -24,7 +24,8 @@ module Payback
             network: 'partner_ads',
             epi: safe_extractor(node, 'uid'),
             commission: safe_extractor(node, 'provision'),
-            timestamp: [node.at_css('dato'), node.at_css('tidspunkt')].join(' ')
+            timestamp: [node.at_css('dato'), node.at_css('tidspunkt')].join(' '),
+            channel: URI::parse(safe_extractor(node, 'url')).host.downcase
           )
         end
       end
