@@ -41,7 +41,8 @@ module Payback
             network: 'adtraction',
             epi: item['epi'],
             channel: item['channelName'],
-            commission: item['commission']
+            commission: item['commission'],
+            timestamp: item['clickDate']
           )
         end
       end
