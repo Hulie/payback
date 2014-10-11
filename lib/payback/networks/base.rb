@@ -55,6 +55,12 @@ module Payback
         ENV[variable_name]
       end
 
+      def safe_extractor(node, selector)
+        if node = node.at_css(selector)
+          node.text
+        end
+      end
+
       def since(days)
         from = (Date.today - days.pred)
         to = Date.today

@@ -40,12 +40,6 @@ module Payback
         )
         parse(res)
       end
-
-      def safe_extractor(node, selector)
-        if node = node.at_css(selector)
-          node.text
-        end
-      end
       
       def parse(res)
         Nokogiri::XML(res.read).css('commission').map do |node|

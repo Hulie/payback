@@ -38,12 +38,6 @@ module Payback
         end.flatten
       end
 
-      def safe_extractor(node, selector)
-        if node = node.at_css(selector)
-          node.text
-        end
-      end
-
       private
 
         def client

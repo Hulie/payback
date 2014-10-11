@@ -20,12 +20,6 @@ module Payback
         parse(res.body)
       end
 
-      def safe_extractor(node, selector)
-        if node = node.at_css(selector)
-          node.text
-        end
-      end
-
       def parse(payload)
         Nokogiri::XML(payload).css('row').map do |node|
           Conversion.new(

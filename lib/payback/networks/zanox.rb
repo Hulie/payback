@@ -70,12 +70,6 @@ module Payback
 
       end
 
-      def safe_extractor(node, selector)
-        if node = node.at_css(selector)
-          node.text
-        end
-      end
-
       def parse(payload)
         Nokogiri::XML(payload).css('saleItem').map do |node|
           Conversion.new(

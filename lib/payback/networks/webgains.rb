@@ -25,12 +25,6 @@ module Payback
         parse(response.to_xml) if response.success?
       end
 
-      def safe_extractor(node, selector)
-        if node = node.at_css(selector)
-          node.text
-        end
-      end
-
       def parse(payload)
         Nokogiri::XML(payload).css('item').map do |node|
           Conversion.new(
