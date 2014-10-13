@@ -18,7 +18,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Get supported networks
+Payback.networks
+
+# Instantiate network client
+client = Payback(:tradedoubler)
+
+# Get conversions for last 7 days
+client.since(7)
+
+# Get conversions for given time period
+client.between('2014-01-01', '2014-02-01')
+
+```
 
 ## Contributing
 
