@@ -6,6 +6,12 @@ require 'base64'
 require 'excon'
 require 'json'
 require 'csv'
+require 'savon'
+
+Savon.configure do |config|
+  config.log = false
+  config.log_level = :info
+end
 
 module Payback
 

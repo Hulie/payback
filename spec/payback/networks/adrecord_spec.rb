@@ -12,7 +12,7 @@ describe Payback::Networks::Adrecord do
         record.uid.must_equal 123456
         record.commission.must_equal 19.87
         record.epi.must_equal 'abc123'
-        record.currency.must_equal 'SEK'
+        record.currency.must_equal nil
         record.network.must_equal 'adrecord'
         record.channel.must_equal 'example.com'
         record.timestamp.must_equal Time.parse('2012-09-17 17:57:06')

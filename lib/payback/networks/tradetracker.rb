@@ -3,8 +3,6 @@
 # https://affiliate.tradetracker.com/webService
 #
 
-require 'savon'
-
 module Payback
   module Networks
     class Tradetracker < Base
@@ -13,10 +11,6 @@ module Payback
 
       URL = "http://ws.tradetracker.com/soap/affiliate?wsdl"
 
-      Savon.configure do |config|
-        config.log = false
-        config.log_level = :debug
-      end
 
       def fetch(from, to)
         authenticate
