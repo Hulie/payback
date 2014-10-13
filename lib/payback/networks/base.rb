@@ -33,10 +33,10 @@ module Payback
         def required_credentials(*keys)
           self.credentials = credentials.concat(keys)
           attr_writer *keys
-          keys.each { |name| define_crendetials_getter(name) }
+          keys.each { |name| define_credentials_getter(name) }
         end
 
-        def define_crendetials_getter(name)
+        def define_credentials_getter(name)
           define_method name do
             instance_variable_get("@#{name}") || load_from_env(name)
           end
