@@ -24,7 +24,7 @@ module Payback
         Nokogiri::XML(payload).css('row').map do |node|
           Conversion.new(
             program: safe_extractor(node, 'programName'),
-            currency: '',
+            currency: nil,
             uid: build_uid(node),
             network: 'tradedoubler',
             epi: safe_extractor(node, 'epi1'),
