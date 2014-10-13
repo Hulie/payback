@@ -15,7 +15,7 @@ describe Payback::Networks::Double do
         record.currency.must_equal 'SEK'
         record.network.must_equal 'double'
         record.channel.must_equal 'example.com'
-        record.timestamp.to_s.must_equal '2014-01-07T12:00:12.862Z'
+        record.timestamp.must_equal Time.parse('2014-01-07T12:00:12.862Z')
         record.program.must_equal 'Kwik-E-Mart'
         record.status.must_equal 'allowed'
       end

@@ -15,7 +15,7 @@ describe Payback::Networks::Tradedoubler do
         record.currency.must_equal nil
         record.network.must_equal 'tradedoubler'
         record.channel.must_equal 'example.com'
-        record.timestamp.must_equal '2014-10-10 00:09:40 CEST'
+        record.timestamp.must_equal Time.parse('2014-10-10 00:09:40 CEST')
         record.program.must_equal 'Kwik-E-Mart'
       end
     end

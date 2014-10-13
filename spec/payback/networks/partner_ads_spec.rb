@@ -15,7 +15,7 @@ describe Payback::Networks::PartnerAds do
         record.currency.must_equal 'DKK'
         record.network.must_equal 'partner_ads'
         record.channel.must_equal 'example.com'
-        record.timestamp.must_equal '10-10-2014 09:34:30'
+        record.timestamp.must_equal Time.parse('10-10-2014 09:34:30')
         record.program.must_equal 'Kwik-E-Mart'
       end
     end

@@ -15,7 +15,7 @@ describe Payback::Networks::Adrecord do
         record.currency.must_equal 'SEK'
         record.network.must_equal 'adrecord'
         record.channel.must_equal 'example.com'
-        record.timestamp.to_s.must_equal '2012-09-17 17:57:06'
+        record.timestamp.must_equal Time.parse('2012-09-17 17:57:06')
         record.program.must_equal 'Kwik-E-Mart'
         record.status.must_equal 5
       end

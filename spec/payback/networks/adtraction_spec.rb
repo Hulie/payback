@@ -15,7 +15,7 @@ describe Payback::Networks::Adtraction do
         record.currency.must_equal 'SEK'
         record.network.must_equal 'adtraction'
         record.channel.must_equal 'example.com'
-        record.timestamp.must_equal '2012-09-18T11:38:07+0200'
+        record.timestamp.must_equal Time.parse('2012-09-18T11:38:07+0200')
         record.program.must_equal 'Kwik-E-Mart'
       end
     end
