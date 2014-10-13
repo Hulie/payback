@@ -30,7 +30,7 @@ module Payback
             epi: item['epi'],
             timestamp: item['click'],
             commission: item['commission'].to_f / 100,
-            currency: 'SEK',
+            currency: nil,
             network: 'adrecord',
             program: item['program']['name'],
             status: item['status']
