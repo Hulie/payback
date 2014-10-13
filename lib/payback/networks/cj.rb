@@ -16,6 +16,8 @@ module Payback
       DAYS_MAXIMUM = 31
       DAYS_MINIMUM = 1
 
+      private
+
       def fetch(from, to)
         bulk = []
         (from..to).each_slice(DAYS_MAXIMUM) do |slice|

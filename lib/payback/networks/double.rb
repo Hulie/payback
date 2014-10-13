@@ -11,6 +11,8 @@ module Payback
 
       URL = 'https://www.double.net/api/publisher/v2/events/'
 
+      private
+
       def fetch(from, to)
         res = Excon.get(URL,
           query: {

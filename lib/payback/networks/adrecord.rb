@@ -12,6 +12,8 @@ module Payback
       HOST = 'https://api.adrecord.com'
       PATH = '/v1/transactions'
 
+      private
+
       def fetch(from, to)
         conn = Excon.new(HOST)
         res = conn.get(

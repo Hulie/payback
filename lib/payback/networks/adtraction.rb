@@ -12,6 +12,8 @@ module Payback
       HOST = 'https://api.adtraction.com'
       PATH = '/v1/affiliate/transactions'
 
+      private
+
       def fetch(from, to)
         conn = Excon.new(HOST)
         res = conn.post(

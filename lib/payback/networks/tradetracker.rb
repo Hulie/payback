@@ -11,6 +11,7 @@ module Payback
 
       URL = "http://ws.tradetracker.com/soap/affiliate?wsdl"
 
+      private
 
       def fetch(from, to)
         authenticate

@@ -6,6 +6,8 @@ module Payback
 
       URL = 'http://www.partner-ads.com/dk/vissalg_xml.php'
 
+      private
+
       def fetch(from, to)
         res = Excon.post(URL, body: URI.encode_www_form(
           key: api_key,

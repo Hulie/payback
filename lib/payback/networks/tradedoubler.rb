@@ -6,6 +6,8 @@ module Payback
 
       URL = 'http://login.tradedoubler.com/pan/aReport3Key.action'
 
+      private
+
       def fetch(from, to)
         res = Excon.get(URL,
           query: {

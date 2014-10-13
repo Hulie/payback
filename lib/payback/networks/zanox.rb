@@ -19,6 +19,8 @@ module Payback
 
       required_credentials :connect_id, :secret_key
 
+      private
+
       def fetch(from, to)
         (from..to).map do |date|
           fetch_by_date(date)

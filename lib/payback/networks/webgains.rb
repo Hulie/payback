@@ -9,6 +9,8 @@ module Payback
 
       required_credentials :username, :password
 
+      private
+
       def client
         @client ||= Savon.client("http://ws.webgains.com/aws.php")
       end

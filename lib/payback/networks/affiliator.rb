@@ -12,6 +12,8 @@ module Payback
       VERSION = 'v1'
       URL = "https://api.affiliator.com/#{VERSION}/"
 
+      private
+
       def fetch(from, to)
         res = Excon.post(URL, body: URI.encode_www_form({
           showClickData: 'true',
