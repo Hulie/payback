@@ -22,6 +22,10 @@ module Payback
       end
     end
 
+    def timestamp=(string)
+      @timestamp = Time.parse(string) if string
+    end
+
     # TODO: Add GUID method?
     # def guid
     #   "#{network}-#{uid}"
