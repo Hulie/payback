@@ -1,0 +1,534 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.webgains.com/aws.php
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Oct 2014 14:41:15 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '39956'
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Connection:
+      - close
+      Set-Cookie:
+      - cookie=3507088430.20480.0000; path=/
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<?xml-stylesheet type=\"text/xsl\"
+        href=\"wsdl-viewer.xsl\"?>\n<definitions xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\"
+        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:tns=\"urn:http://ws.webgains.com/aws.php\"
+        xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\" xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\"
+        xmlns=\"http://schemas.xmlsoap.org/wsdl/\" targetNamespace=\"urn:http://ws.webgains.com/aws.php\">\n<types><xsd:schema
+        targetNamespace=\"urn:http://ws.webgains.com/aws.php\">\n <xsd:import namespace=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n <xsd:import namespace=\"http://schemas.xmlsoap.org/wsdl/\" />\n <xsd:complexType
+        name=\"linesArray\">\n  <xsd:all>\n   <xsd:element name=\"campaignName\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"campaignID\" type=\"xsd:int\"/>\n   <xsd:element name=\"date\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"programName\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"programID\" type=\"xsd:int\"/>\n   <xsd:element name=\"commission\"
+        type=\"xsd:float\"/>\n   <xsd:element name=\"saleValue\" type=\"xsd:float\"/>\n
+        \  <xsd:element name=\"clickRef\" type=\"xsd:string\"/>\n   <xsd:element name=\"clickthroughTime\"
+        type=\"xsd:dateTime\"/>\n  </xsd:all>\n </xsd:complexType>\n <xsd:complexType
+        name=\"detailedLinesArray\">\n  <xsd:all>\n   <xsd:element name=\"affiliateID\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"campaignName\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"campaignID\" type=\"xsd:int\"/>\n   <xsd:element name=\"date\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"validationDate\" type=\"xsd:dateTime\"/>\n
+        \  <xsd:element name=\"delayedUntilDate\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"programName\" type=\"xsd:string\"/>\n   <xsd:element name=\"programID\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"linkID\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"eventID\" type=\"xsd:int\"/>\n   <xsd:element name=\"commission\"
+        type=\"xsd:float\"/>\n   <xsd:element name=\"saleValue\" type=\"xsd:float\"/>\n
+        \  <xsd:element name=\"status\" type=\"xsd:string\"/>\n   <xsd:element name=\"paymentStatus\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"changeReason\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"clickRef\" type=\"xsd:string\"/>\n   <xsd:element name=\"clickthroughTime\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"landingPage\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"country\" type=\"xsd:string\"/>\n   <xsd:element name=\"referrer\"
+        type=\"xsd:string\"/>\n  </xsd:all>\n </xsd:complexType>\n  <xsd:complexType
+        name=\"fullEarningsWithCurrencyArray\">\n  <xsd:all>\n   <xsd:element name=\"transactionID\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"affiliateID\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"campaignName\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"campaignID\" type=\"xsd:int\"/>\n   <xsd:element name=\"date\" type=\"xsd:dateTime\"/>\n
+        \  <xsd:element name=\"validationDate\" type=\"xsd:dateTime\"/>\n   <xsd:element
+        name=\"delayedUntilDate\" type=\"xsd:string\"/>\n   <xsd:element name=\"programName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"programID\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"linkID\" type=\"xsd:string\"/>\n   <xsd:element name=\"eventID\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"commission\" type=\"xsd:float\"/>\n
+        \  <xsd:element name=\"saleValue\" type=\"xsd:float\"/>\n   <xsd:element name=\"status\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"paymentStatus\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"changeReason\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"clickRef\" type=\"xsd:string\"/>\n   <xsd:element name=\"clickthroughTime\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"landingPage\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"country\" type=\"xsd:string\"/>\n   <xsd:element name=\"referrer\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"currency\" type=\"xsd:string\"/>\n
+        \ </xsd:all>\n </xsd:complexType>\n  <xsd:complexType name=\"fullEarningsWithPaymentDateArray\">\n
+        \ <xsd:all>\n   <xsd:element name=\"transactionID\" type=\"xsd:int\"/>\n   <xsd:element
+        name=\"affiliateID\" type=\"xsd:int\"/>\n   <xsd:element name=\"campaignName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"campaignID\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"date\" type=\"xsd:dateTime\"/>\n   <xsd:element name=\"validationDate\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"delayedUntilDate\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"programName\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"programID\" type=\"xsd:int\"/>\n   <xsd:element name=\"linkID\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"eventID\" type=\"xsd:int\"/>\n   <xsd:element name=\"commission\"
+        type=\"xsd:float\"/>\n   <xsd:element name=\"saleValue\" type=\"xsd:float\"/>\n
+        \  <xsd:element name=\"status\" type=\"xsd:string\"/>\n   <xsd:element name=\"paymentStatus\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"changeReason\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"clickRef\" type=\"xsd:string\"/>\n   <xsd:element name=\"clickthroughTime\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"landingPage\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"country\" type=\"xsd:string\"/>\n   <xsd:element name=\"referrer\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"currency\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"paymentDate\" type=\"xsd:dateTime\"/>\n   <xsd:element
+        name=\"voucherCode\" type=\"xsd:string\"/>\n  </xsd:all>\n </xsd:complexType>\n
+        <xsd:complexType name=\"fullEarningsWithViewReferenceArray\">\n  <xsd:all>\n
+        \  <xsd:element name=\"transactionID\" type=\"xsd:int\"/>\n   <xsd:element
+        name=\"affiliateID\" type=\"xsd:int\"/>\n   <xsd:element name=\"campaignName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"campaignID\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"date\" type=\"xsd:dateTime\"/>\n   <xsd:element name=\"validationDate\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"delayedUntilDate\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"programName\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"programID\" type=\"xsd:int\"/>\n   <xsd:element name=\"linkID\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"eventID\" type=\"xsd:int\"/>\n   <xsd:element name=\"commission\"
+        type=\"xsd:float\"/>\n   <xsd:element name=\"saleValue\" type=\"xsd:float\"/>\n
+        \  <xsd:element name=\"status\" type=\"xsd:string\"/>\n   <xsd:element name=\"paymentStatus\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"changeReason\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"clickRef\" type=\"xsd:string\"/>\n   <xsd:element name=\"clickthroughTime\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"viewReference\" type=\"xsd:string\"
+        />\n   <xsd:element name=\"landingPage\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"country\" type=\"xsd:string\"/>\n   <xsd:element name=\"referrer\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"currency\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"paymentDate\" type=\"xsd:dateTime\"/>\n   <xsd:element
+        name=\"voucherCode\" type=\"xsd:string\"/>\n  </xsd:all>\n </xsd:complexType>
+        \n <xsd:complexType name=\"fullLinesArray\">\n  <xsd:all>\n   <xsd:element
+        name=\"transactionID\" type=\"xsd:int\"/>\n   <xsd:element name=\"affiliateID\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"campaignName\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"campaignID\" type=\"xsd:int\"/>\n   <xsd:element name=\"date\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"validationDate\" type=\"xsd:dateTime\"/>\n
+        \  <xsd:element name=\"delayedUntilDate\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"programName\" type=\"xsd:string\"/>\n   <xsd:element name=\"programID\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"linkID\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"eventID\" type=\"xsd:int\"/>\n   <xsd:element name=\"commission\"
+        type=\"xsd:float\"/>\n   <xsd:element name=\"saleValue\" type=\"xsd:float\"/>\n
+        \  <xsd:element name=\"status\" type=\"xsd:string\"/>\n   <xsd:element name=\"paymentStatus\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"changeReason\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"clickRef\" type=\"xsd:string\"/>\n   <xsd:element name=\"clickthroughTime\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"landingPage\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"country\" type=\"xsd:string\"/>\n   <xsd:element name=\"referrer\"
+        type=\"xsd:string\"/>\n  </xsd:all>\n </xsd:complexType>\n <xsd:complexType
+        name=\"fullEarningsWithLockDateArray\">\n  <xsd:all>\n   <xsd:element name=\"transactionID\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"affiliateID\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"campaignName\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"campaignID\" type=\"xsd:int\"/>\n   <xsd:element name=\"date\" type=\"xsd:dateTime\"/>\n
+        \  <xsd:element name=\"validationDate\" type=\"xsd:dateTime\"/>\n   <xsd:element
+        name=\"delayedUntilDate\" type=\"xsd:string\"/>\n   <xsd:element name=\"programName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"programID\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"linkID\" type=\"xsd:string\"/>\n   <xsd:element name=\"eventID\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"commission\" type=\"xsd:float\"/>\n
+        \  <xsd:element name=\"saleValue\" type=\"xsd:float\"/>\n   <xsd:element name=\"status\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"paymentStatus\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"changeReason\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"clickRef\" type=\"xsd:string\"/>\n   <xsd:element name=\"clickthroughTime\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"landingPage\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"country\" type=\"xsd:string\"/>\n   <xsd:element name=\"referrer\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"lockDate\" type=\"xsd:dateTime\"/>\n
+        \ </xsd:all>\n </xsd:complexType>\n <xsd:complexType name=\"fullEarningsLinesArray\">\n
+        \ <xsd:all>\n   <xsd:element name=\"transactionID\" type=\"xsd:int\"/>\n   <xsd:element
+        name=\"affiliateID\" type=\"xsd:int\"/>\n   <xsd:element name=\"campaignName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"campaignID\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"date\" type=\"xsd:dateTime\"/>\n   <xsd:element name=\"validationDate\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"delayedUntilDate\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"programName\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"programID\" type=\"xsd:int\"/>\n   <xsd:element name=\"linkID\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"eventID\" type=\"xsd:int\"/>\n   <xsd:element name=\"eventName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"commission\" type=\"xsd:float\"/>\n
+        \  <xsd:element name=\"saleValue\" type=\"xsd:float\"/>\n   <xsd:element name=\"status\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"paymentStatus\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"changeReason\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"clickRef\" type=\"xsd:string\"/>\n   <xsd:element name=\"clickthroughTime\"
+        type=\"xsd:dateTime\"/>\n   <xsd:element name=\"landingPage\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"country\" type=\"xsd:string\"/>\n   <xsd:element name=\"referrer\"
+        type=\"xsd:string\"/>\n  </xsd:all>\n </xsd:complexType>\n <xsd:complexType
+        name=\"programLineArray\">\n  <xsd:all>\n   <xsd:element name=\"programName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"programID\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"commissionTotals\" type=\"xsd:float\"/>\n   <xsd:element
+        name=\"transactionTotals\" type=\"xsd:float\"/>\n   <xsd:element name=\"transactionNumber\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"clickTotals\" type=\"xsd:int\"/>\n
+        \  <xsd:element name=\"viewTotals\" type=\"xsd:int\"/>\n   <xsd:element name=\"convRate\"
+        type=\"xsd:float\"/>\n   <xsd:element name=\"ephc\" type=\"xsd:float\"/>\n
+        \ </xsd:all>\n </xsd:complexType>\n <xsd:complexType name=\"programContainerArray\">\n
+        \ <xsd:complexContent>\n   <xsd:restriction base=\"SOAP-ENC:Array\">\n    <xsd:attribute
+        ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:programArray[]\"/>\n   </xsd:restriction>\n
+        \ </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType name=\"programArray\">\n
+        \ <xsd:all>\n   <xsd:element name=\"programID\" type=\"xsd:int\"/>\n   <xsd:element
+        name=\"programURL\" type=\"xsd:string\"/>\n   <xsd:element name=\"programName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"programDescription\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"programShortDescription\" type=\"xsd:string\"/>\n  </xsd:all>\n
+        </xsd:complexType>\n <xsd:complexType name=\"programNetworkContainerArray\">\n
+        \ <xsd:complexContent>\n   <xsd:restriction base=\"SOAP-ENC:Array\">\n    <xsd:attribute
+        ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:programNetworkArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType
+        name=\"programMembershipStatusContainerArray\">\n  <xsd:complexContent>\n
+        \  <xsd:restriction base=\"SOAP-ENC:Array\">\n    <xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:programMembershipStatusArray[]\"/>\n   </xsd:restriction>\n
+        \ </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType name=\"programMembershipStatusArray\">\n
+        \ <xsd:all>\n   <xsd:element name=\"programID\" type=\"xsd:int\"/>\n   <xsd:element
+        name=\"programURL\" type=\"xsd:string\"/>\n   <xsd:element name=\"programName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"programDescription\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"programShortDescription\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"programNetworkID\" type=\"xsd:int\"/>\n   <xsd:element name=\"programNetworkName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"programMembershipStatusCode\"
+        type=\"xsd:int\"/>\n   <xsd:element name=\"programMembershipStatusName\" type=\"xsd:string\"/>\n
+        \ </xsd:all>\n </xsd:complexType>\n <xsd:complexType name=\"programNetworkArray\">\n
+        \ <xsd:all>\n   <xsd:element name=\"programID\" type=\"xsd:int\"/>\n   <xsd:element
+        name=\"programURL\" type=\"xsd:string\"/>\n   <xsd:element name=\"programName\"
+        type=\"xsd:string\"/>\n   <xsd:element name=\"programDescription\" type=\"xsd:string\"/>\n
+        \  <xsd:element name=\"programShortDescription\" type=\"xsd:string\"/>\n   <xsd:element
+        name=\"programNetworkID\" type=\"xsd:int\"/>\n   <xsd:element name=\"programNetworkName\"
+        type=\"xsd:string\"/>\n  </xsd:all>\n </xsd:complexType>\n <xsd:complexType
+        name=\"reportArray\">\n  <xsd:complexContent>\n   <xsd:restriction base=\"SOAP-ENC:Array\">\n
+        \   <xsd:attribute ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:linesArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType
+        name=\"programReportArray\">\n  <xsd:complexContent>\n   <xsd:restriction
+        base=\"SOAP-ENC:Array\">\n    <xsd:attribute ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:programLineArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType
+        name=\"detailedReportArray\">\n  <xsd:complexContent>\n   <xsd:restriction
+        base=\"SOAP-ENC:Array\">\n    <xsd:attribute ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:detailedLinesArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType
+        name=\"fullReportArray\">\n  <xsd:complexContent>\n   <xsd:restriction base=\"SOAP-ENC:Array\">\n
+        \   <xsd:attribute ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:fullLinesArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n  <xsd:complexType
+        name=\"fullEarningsWithCurrencyReportArray\">\n  <xsd:complexContent>\n   <xsd:restriction
+        base=\"SOAP-ENC:Array\">\n    <xsd:attribute ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:fullEarningsWithCurrencyArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n   <xsd:complexType
+        name=\"fullEarningsWithPaymentDateReportArray\">\n  <xsd:complexContent>\n
+        \  <xsd:restriction base=\"SOAP-ENC:Array\">\n    <xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:fullEarningsWithPaymentDateArray[]\"/>\n   </xsd:restriction>\n
+        \ </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType name=\"fullEarningsWithViewReferenceReportArray\">\n
+        \ <xsd:complexContent>\n   <xsd:restriction base=\"SOAP-ENC:Array\">\n    <xsd:attribute
+        ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:fullEarningsWithViewReferenceArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType
+        name=\"fullEarningsWithLockDateReportArray\">\n  <xsd:complexContent>\n   <xsd:restriction
+        base=\"SOAP-ENC:Array\">\n    <xsd:attribute ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:fullEarningsWithLockDateArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n <xsd:complexType
+        name=\"fullEarningsReportArray\">\n  <xsd:complexContent>\n   <xsd:restriction
+        base=\"SOAP-ENC:Array\">\n    <xsd:attribute ref=\"SOAP-ENC:arrayType\" wsdl:arrayType=\"tns:fullEarningsLinesArray[]\"/>\n
+        \  </xsd:restriction>\n  </xsd:complexContent>\n </xsd:complexType>\n</xsd:schema>\n</types>\n\n<message
+        name=\"getEarningsRequest\"><part name=\"startdate\" type=\"xsd:dateTime\"
+        /><part name=\"enddate\" type=\"xsd:dateTime\" /><part name=\"campaignid\"
+        type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\" /><part name=\"password\"
+        type=\"xsd:string\" /></message>\n<message name=\"getEarningsResponse\"><part
+        name=\"return\" type=\"tns:reportArray\" /></message>\n<message name=\"getDetailedEarningsRequest\"><part
+        name=\"startdate\" type=\"xsd:dateTime\" /><part name=\"enddate\" type=\"xsd:dateTime\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /></message>\n<message name=\"getDetailedEarningsResponse\"><part
+        name=\"return\" type=\"tns:detailedReportArray\" /></message>\n<message name=\"getFullEarningsRequest\"><part
+        name=\"startdate\" type=\"xsd:dateTime\" /><part name=\"enddate\" type=\"xsd:dateTime\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /></message>\n<message name=\"getFullEarningsResponse\"><part
+        name=\"return\" type=\"tns:fullReportArray\" /></message>\n<message name=\"getFullEarningsWithEventNameRequest\"><part
+        name=\"startdate\" type=\"xsd:dateTime\" /><part name=\"enddate\" type=\"xsd:dateTime\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /></message>\n<message name=\"getFullEarningsWithEventNameResponse\"><part
+        name=\"return\" type=\"tns:fullEarningsReportArray\" /></message>\n<message
+        name=\"getFullUpdatedEarningsRequest\"><part name=\"startdate\" type=\"xsd:dateTime\"
+        /><part name=\"enddate\" type=\"xsd:dateTime\" /><part name=\"campaignid\"
+        type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\" /><part name=\"password\"
+        type=\"xsd:string\" /></message>\n\n<message name=\"getFullEarningsWithPaymentDateRequest\"><part
+        name=\"startdate\" type=\"xsd:dateTime\" /><part name=\"enddate\" type=\"xsd:dateTime\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /></message>\n<message name=\"getFullEarningsWithPaymentDateResponse\"><part
+        name=\"return\" type=\"tns:fullEarningsWithPaymentDateReportArray\" /></message>\n\n<message
+        name=\"getFullEarningsWithViewReferenceRequest\"><part name=\"startdate\"
+        type=\"xsd:dateTime\" /><part name=\"enddate\" type=\"xsd:dateTime\" /><part
+        name=\"campaignid\" type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /></message>\n<message name=\"getFullEarningsWithViewReferenceResponse\"><part
+        name=\"return\" type=\"tns:fullEarningsWithViewReferenceReportArray\" /></message>\n\n<message
+        name=\"getFullEarningsWithLockDateRequest\"><part name=\"startdate\" type=\"xsd:dateTime\"
+        /><part name=\"enddate\" type=\"xsd:dateTime\" /><part name=\"campaignid\"
+        type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\" /><part name=\"password\"
+        type=\"xsd:string\" /></message>\n<message name=\"getFullEarningsWithLockDateResponse\"><part
+        name=\"return\" type=\"tns:fullEarningsWithLockDateReportArray\" /></message>\n\n<message
+        name=\"getFullEarningsWithCurrencyRequest\"><part name=\"startdate\" type=\"xsd:dateTime\"
+        /><part name=\"enddate\" type=\"xsd:dateTime\" /><part name=\"campaignid\"
+        type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\" /><part name=\"password\"
+        type=\"xsd:string\" /></message>\n<message name=\"getFullEarningsWithCurrencyResponse\"><part
+        name=\"return\" type=\"tns:fullEarningsWithCurrencyReportArray\" /></message>\n\n<message
+        name=\"getFullUpdatedEarningsResponse\"><part name=\"return\" type=\"tns:fullReportArray\"
+        /></message>\n<message name=\"getProgramReportRequest\"><part name=\"startdate\"
+        type=\"xsd:dateTime\" /><part name=\"enddate\" type=\"xsd:dateTime\" /><part
+        name=\"campaignid\" type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /></message>\n<message name=\"getProgramReportResponse\"><part
+        name=\"return\" type=\"tns:programReportArray\" /></message>\n<message name=\"getProgramsRequest\"><part
+        name=\"username\" type=\"xsd:string\" /><part name=\"password\" type=\"xsd:string\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /></message>\n<message name=\"getProgramsResponse\"><part
+        name=\"return\" type=\"tns:programContainerArray\" /></message>\n<message
+        name=\"getProgramsWithCountryRequest\"><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /><part name=\"campaignid\"
+        type=\"xsd:int\" /></message>\n<message name=\"getProgramsWithCountryResponse\"><part
+        name=\"return\" type=\"tns:programNetworkContainerArray\" /></message>\n<message
+        name=\"getProgramsWithMembershipStatusRequest\"><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /><part name=\"campaignid\"
+        type=\"xsd:int\" /></message>\n<message name=\"getProgramsWithMembershipStatusResponse\"><part
+        name=\"return\" type=\"tns:programMembershipStatusContainerArray\" /></message>\n<message
+        name=\"getEarningsAsStringRequest\"><part name=\"startdate\" type=\"xsd:dateTime\"
+        /><part name=\"enddate\" type=\"xsd:dateTime\" /><part name=\"campaignid\"
+        type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\" /><part name=\"password\"
+        type=\"xsd:string\" /></message>\n<message name=\"getEarningsAsStringResponse\"><part
+        name=\"return\" type=\"xsd:string\" /></message>\n<message name=\"getEarningsAsStringWithIDRequest\"><part
+        name=\"startdate\" type=\"xsd:dateTime\" /><part name=\"enddate\" type=\"xsd:dateTime\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /></message>\n<message name=\"getEarningsAsStringWithIDResponse\"><part
+        name=\"return\" type=\"xsd:string\" /></message>\n<message name=\"getProgramReportAsStringRequest\"><part
+        name=\"startdate\" type=\"xsd:dateTime\" /><part name=\"enddate\" type=\"xsd:dateTime\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /><part name=\"username\" type=\"xsd:string\"
+        /><part name=\"password\" type=\"xsd:string\" /></message>\n<message name=\"getProgramReportAsStringResponse\"><part
+        name=\"return\" type=\"xsd:string\" /></message>\n<message name=\"getProgramsAsStringRequest\"><part
+        name=\"username\" type=\"xsd:string\" /><part name=\"password\" type=\"xsd:string\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /></message>\n<message name=\"getProgramsAsStringResponse\"><part
+        name=\"return\" type=\"xsd:string\" /></message>\n<message name=\"getBriefProgramsAsStringRequest\"><part
+        name=\"username\" type=\"xsd:string\" /><part name=\"password\" type=\"xsd:string\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /></message>\n<message name=\"getBriefProgramsAsStringResponse\"><part
+        name=\"return\" type=\"xsd:string\" /></message>\n<message name=\"getAccountBalanceRequest\"><part
+        name=\"username\" type=\"xsd:string\" /><part name=\"password\" type=\"xsd:string\"
+        /><part name=\"campaignid\" type=\"xsd:int\" /></message>\n<message name=\"getAccountBalanceResponse\"><part
+        name=\"return\" type=\"xsd:string\" /></message>\n\n<portType name=\"WebgainsPortType\">\n\t<operation
+        name=\"getEarnings\"><documentation>Get details of commissions; returns array
+        containing: Web site/keyword campaign name, Web site/keyword campaign ID,
+        date, Program name, Program ID, commission, Value of Sale, Click Reference,
+        Clickthrough Time</documentation><input message=\"tns:getEarningsRequest\"/><output
+        message=\"tns:getEarningsResponse\"/></operation>\n\t<operation name=\"getDetailedEarnings\"><documentation>Get
+        details of commissions; returns array containing: Affiliate ID, Web site/keyword
+        campaign name, Web site/keyword campaign ID, date, validation date, Delayed
+        Until Date, Program name, Program ID, link ID, Event ID, commission, Value
+        of Sale, Payment Status, Status, Change Reason, Click Reference, Clickthrough
+        Time, Landing Page, Country, Referrer</documentation><input message=\"tns:getDetailedEarningsRequest\"/><output
+        message=\"tns:getDetailedEarningsResponse\"/></operation>\n\t<operation name=\"getFullEarnings\"><documentation>Get
+        full details of commissions; returns array containing: Network transaction
+        ID, Affiliate ID, Web site/keyword campaign name, Web site/keyword campaign
+        ID, date, validation date, Delayed Until Date, Program name, Program ID, link
+        ID, Event ID, commission, Value of Sale, Status, Payment Status, Change Reason,
+        Click Reference, Clickthrough Time, Landing Page, Country, Referrer</documentation><input
+        message=\"tns:getFullEarningsRequest\"/><output message=\"tns:getFullEarningsResponse\"/></operation>\n\t<operation
+        name=\"getFullEarningsWithEventName\"><documentation>Get full details of commissions;
+        returns array containing: Network transaction ID, Affiliate ID, Web site/keyword
+        campaign name, Web site/keyword campaign ID, date, validation date, Delayed
+        Until Date, Program name, Program ID, link ID, Event ID, Event name, commission,
+        Value of Sale, Status, Payment Status, Change Reason, Click Reference, Clickthrough
+        Time, Landing Page, Country, Referrer</documentation><input message=\"tns:getFullEarningsWithEventNameRequest\"/><output
+        message=\"tns:getFullEarningsWithEventNameResponse\"/></operation>\n\t<operation
+        name=\"getFullUpdatedEarnings\"><documentation>Get full details of commissions
+        last updated between the two dates; returns array containing: Network transaction
+        ID, Affiliate ID, Web site/keyword campaign name, Web site/keyword campaign
+        ID, date, validation date, Delayed Until Date, Program name, Program ID, link
+        ID, Event ID, commission, Value of Sale, Status, Payment Status, Change Reason,
+        Click Reference, Clickthrough Time, Landing Page, Country, Referrer</documentation><input
+        message=\"tns:getFullUpdatedEarningsRequest\"/><output message=\"tns:getFullUpdatedEarningsResponse\"/></operation>\n\n\t<operation
+        name=\"getFullEarningsWithCurrency\"><documentation>Get full details of commissions;
+        returns array containing: Network transaction ID, Affiliate ID, Web site/keyword
+        campaign name, Web site/keyword campaign ID, date, validation date, Delayed
+        Until Date, Program name, Program ID, link ID, Event ID, Event name, commission,
+        Value of Sale, Status, Payment Status, Change Reason, Click Reference, Clickthrough
+        Time, Landing Page, Country, Referrer, Currency</documentation><input message=\"tns:getFullEarningsWithCurrencyRequest\"/><output
+        message=\"tns:getFullEarningsWithCurrencyResponse\"/></operation>\n    <operation
+        name=\"getFullEarningsWithPaymentDate\"><documentation>Get full details of
+        commissions; returns array containing: Network transaction ID, Affiliate ID,
+        Web site/keyword campaign name, Web site/keyword campaign ID, date, validation
+        date, Delayed Until Date, Program name, Program ID, link ID, Event ID, Event
+        name, commission, Value of Sale, Status, Payment Status, Change Reason, Click
+        Reference, Clickthrough Time, Landing Page, Country, Referrer, Currency, Payment
+        Date, Voucher Code</documentation><input message=\"tns:getFullEarningsWithPaymentDateRequest\"/><output
+        message=\"tns:getFullEarningsWithPaymentDateResponse\"/></operation>\n\t<operation
+        name=\"getFullEarningsWithViewReference\"><documentation>Get full details
+        of commissions; returns array containing: Network transaction ID, Affiliate
+        ID, Web site/keyword campaign name, Web site/keyword campaign ID, date, validation
+        date, Delayed Until Date, Program name, Program ID, link ID, Event ID, Event
+        name, commission, Value of Sale, Status, Payment Status, Change Reason, Click
+        Reference, Clickthrough Time, View Reference, Landing Page, Country, Referrer,
+        Currency, Payment Date, Voucher Code</documentation><input message=\"tns:getFullEarningsWithViewReferenceRequest\"/><output
+        message=\"tns:getFullEarningsWithViewReferenceResponse\"/></operation>\n\t<operation
+        name=\"getFullEarningsWithLockDate\"><documentation>Get full details of commissions;
+        returns array containing: Network transaction ID, Affiliate ID, Web site/keyword
+        campaign name, Web site/keyword campaign ID, date, validation date, Delayed
+        Until Date, Program name, Program ID, link ID, Event ID, Event name, commission,
+        Value of Sale, Status, Payment Status, Change Reason, Click Reference, Clickthrough
+        Time, Landing Page, Country, Referrer, Currency, Payment Date, Voucher Code,
+        Lock Date</documentation><input message=\"tns:getFullEarningsWithLockDateRequest\"/><output
+        message=\"tns:getFullEarningsWithLockDateResponse\"/></operation>\n\t<operation
+        name=\"getProgramReport\"><documentation>Get performance by program; returns
+        array containing: Program Name, programID, Amount of commission, Amount of
+        sale, Number of sales, Clicks, impressions, Conversion rate, Earnings per
+        hundred clicks</documentation><input message=\"tns:getProgramReportRequest\"/><output
+        message=\"tns:getProgramReportResponse\"/></operation>\n\t<operation name=\"getPrograms\"><documentation>Get
+        details of current programs/advertisers.</documentation><input message=\"tns:getProgramsRequest\"/><output
+        message=\"tns:getProgramsResponse\"/></operation>\n\t<operation name=\"getProgramsWithCountry\"><documentation>Get
+        details of current programs/advertisers: id, name, homepage URL, full description,
+        short description, ID of webgains country, name of webgains country</documentation><input
+        message=\"tns:getProgramsWithCountryRequest\"/><output message=\"tns:getProgramsWithCountryResponse\"/></operation>\n\t<operation
+        name=\"getProgramsWithMembershipStatus\"><documentation>Get details of current
+        programs/advertisers: id, name, homepage URL, full description, short description,
+        ID of webgains country, name of webgains country, membership status</documentation><input
+        message=\"tns:getProgramsWithMembershipStatusRequest\"/><output message=\"tns:getProgramsWithMembershipStatusResponse\"/></operation>\n\t<operation
+        name=\"getEarningsAsString\"><documentation>Get details of commissions; returns
+        string containing: Web site/keyword campaign name, Web site/keyword campaign
+        ID, date, Program name, Program ID, commission, Value of Sale, Click Reference,
+        Clickthrough Time</documentation><input message=\"tns:getEarningsAsStringRequest\"/><output
+        message=\"tns:getEarningsAsStringResponse\"/></operation>\n\t<operation name=\"getEarningsAsStringWithID\"><documentation>Get
+        details of commissions; returns string containing: Web site/keyword campaign
+        name, Web site/keyword campaign ID, date, Program name, Program ID, commission,
+        Value of Sale, Click Reference, Clickthrough Time, Transaction ID</documentation><input
+        message=\"tns:getEarningsAsStringWithIDRequest\"/><output message=\"tns:getEarningsAsStringWithIDResponse\"/></operation>\n\t<operation
+        name=\"getProgramReportAsString\"><documentation>Get performance by program;
+        returns string containing: Program Name, programID, Amount of commission,
+        Amount of sale, Number of sales, Clicks, impressions, Conversion rate, Earnings
+        per hundred clicks</documentation><input message=\"tns:getProgramReportAsStringRequest\"/><output
+        message=\"tns:getProgramReportAsStringResponse\"/></operation>\n\t<operation
+        name=\"getProgramsAsString\"><documentation>Get details of current programs/advertisers.</documentation><input
+        message=\"tns:getProgramsAsStringRequest\"/><output message=\"tns:getProgramsAsStringResponse\"/></operation>\n\t<operation
+        name=\"getBriefProgramsAsString\"><documentation>Get brief details of current
+        programs/advertisers (Program ID and Program Name)</documentation><input message=\"tns:getBriefProgramsAsStringRequest\"/><output
+        message=\"tns:getBriefProgramsAsStringResponse\"/></operation>\n\t<operation
+        name=\"getAccountBalance\"><documentation>Get account balance</documentation><input
+        message=\"tns:getAccountBalanceRequest\"/><output message=\"tns:getAccountBalanceResponse\"/></operation>\n\n</portType>\n\n\n<binding
+        name=\"WebgainsBinding\" type=\"tns:WebgainsPortType\"><soap:binding style=\"rpc\"
+        transport=\"http://schemas.xmlsoap.org/soap/http\"/>\n\t<operation name=\"getEarnings\"><soap:operation
+        soapAction=\"urn:http://ws.webgains.com/aws.php#getEarnings\" style=\"rpc\"/><input><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getDetailedEarnings\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getDetailedEarnings\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getFullEarnings\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getFullEarnings\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://devws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getFullEarningsWithEventName\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getFullEarningsWithEventName\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getFullUpdatedEarnings\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getFullUpdatedEarnings\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\n\t<operation
+        name=\"getFullEarningsWithCurrency\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getFullEarningsWithCurrency\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\n
+        \   <operation name=\"getFullEarningsWithPaymentDate\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getFullEarningsWithPaymentDate\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n
+        \   <operation name=\"getFullEarningsWithViewReference\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getFullEarningsWithViewReference\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n
+        \   <operation name=\"getFullEarningsWithLockDate\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getFullEarningsWithLockDate\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\n\t<operation
+        name=\"getProgramReport\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getProgramReport\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getPrograms\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getPrograms\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getProgramsWithCountry\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getProgramsWithCountry\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getEarningsAsString\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getEarningsAsString\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getEarningsAsStringWithID\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getEarningsAsStringWithID\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getProgramReportAsString\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getProgramReportAsString\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getProgramsAsString\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getProgramsAsString\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getBriefProgramsAsString\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getBriefProgramsAsString\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getProgramsWithMembershipStatus\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getProgramsWithMembershipStatus\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n\t<operation
+        name=\"getAccountBalance\"><soap:operation soapAction=\"urn:http://ws.webgains.com/aws.php#getAccountBalance\"
+        style=\"rpc\"/><input><soap:body use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\"
+        encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></input><output><soap:body
+        use=\"encoded\" namespace=\"urn:http://ws.webgains.com/aws.php\" encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"/></output></operation>\n</binding>\n<service
+        name=\"Webgains\"><port name=\"WebgainsPort\" binding=\"tns:WebgainsBinding\"><soap:address
+        location=\"http://ws.webgains.com/aws.php\"/></port></service>\n</definitions>\n"
+    http_version:
+  recorded_at: Mon, 13 Oct 2014 14:41:14 GMT
+- request:
+    method: post
+    uri: http://ws.webgains.com/aws.php
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="urn:http://ws.webgains.com/aws.php"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="urn:http://ws.webgains.com/aws.php"><env:Body><tns:getFullEarningsWithCurrency><username><WEBGAINS_USERNAME></username><password><WEBGAINS_PASSWORD></password><startdate>2014-10-10</startdate><enddate>2014-10-11</enddate></tns:getFullEarningsWithCurrency></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - '"urn:http://ws.webgains.com/aws.php#getFullEarningsWithCurrency"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '537'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Oct 2014 14:41:15 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '33385'
+      Content-Type:
+      - text/xml; charset=utf-8
+      Connection:
+      - close
+      Set-Cookie:
+      - cookie=3507088430.20480.0000; path=/
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="urn:http://ws.webgains.com/aws.php" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getFullEarningsWithCurrencyResponse><return SOAP-ENC:arrayType="ns1:fullEarningsWithCurrencyArray[21]" xsi:type="ns1:fullEarningsWithCurrencyReportArray"><item xsi:type="ns1:fullEarningsWithCurrencyArray"><transactionID xsi:type="xsd:int">123456</transactionID><affiliateID xsi:type="xsd:int">123</affiliateID><campaignName xsi:type="xsd:string">example.com</campaignName><campaignID xsi:type="xsd:int">1234</campaignID><date xsi:type="xsd:dateTime">2014-10-10T11:02:48</date><validationDate xsi:type="xsd:dateTime">2014-10-10T11:02:48</validationDate><delayedUntilDate xsi:type="xsd:string"></delayedUntilDate><programName xsi:type="xsd:string">Kwik-E-Mart</programName><programID xsi:type="xsd:int">1234</programID><linkID xsi:type="xsd:string">0</linkID><eventID xsi:type="xsd:int">1234</eventID><commission xsi:type="xsd:float">19.87</commission><saleValue xsi:type="xsd:float">35.91</saleValue><status xsi:type="xsd:string">confirmed</status><paymentStatus xsi:type="xsd:string">notcleared</paymentStatus><changeReason xsi:nil="true"/><clickRef xsi:type="xsd:string">abc123</clickRef><clickthroughTime xsi:type="xsd:dateTime">2014-10-10T10:26:59</clickthroughTime><landingPage xsi:type="xsd:string">http://www.example.com</landingPage><country xsi:type="xsd:string">GB</country><referrer xsi:type="xsd:string">http://example.com/products</referrer><currency xsi:type="xsd:string">GBP</currency></item></return></ns1:getFullEarningsWithCurrencyResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version:
+  recorded_at: Mon, 13 Oct 2014 14:41:15 GMT
+recorded_with: VCR 2.9.3
