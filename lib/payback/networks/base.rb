@@ -44,9 +44,39 @@ module Payback
 
       end
 
+      def since(days)
+        from = (Date.today - days.pred)
+        to = Date.today
+        _fetch(from, to)
+      end
+
+      def between(from, to)
+        from = parse_date(from)
+        to = parse_date(to)
+        _fetch(from, to)
+      end
+
+      def credentials
+        @credentials ||= self.class.credentials
+      end
+
+      def valid_credentials?
+        credentials.all? do |method_name|
+          !public_send(method_name).nil?
+        end
+      end
+
       def logger
         @logger ||= Logger.new($stdout).tap do |x|
           x.progname = 'payback'
+        end
+      end
+
+      def parse_date(value)
+        case value
+        when String then Date.parse(value)
+        when Date then value
+        else raise("Invalid date argument: #{value.inspect} (#{value.class})")
         end
       end
 
@@ -67,35 +97,7 @@ module Payback
         end
       end
 
-      def since(days)
-        from = (Date.today - days.pred)
-        to = Date.today
-        _fetch(from, to)
-      end
-
-      def parse_date(value)
-        case value
-        when String then Date.parse(value)
-        when Date then value
-        else raise("Invalid date argument: #{value.inspect} (#{value.class})")
-        end
-      end
-
-      def between(from, to)
-        from = parse_date(from)
-        to = parse_date(to)
-        _fetch(from, to)
-      end
-
-      def credentials
-        @credentials ||= self.class.credentials
-      end
-
-      def valid_credentials?
-        credentials.all? do |method_name|
-          !public_send(method_name).nil?
-        end
-      end
+      protected
 
       def _fetch(from, to)
         if valid_credentials?
