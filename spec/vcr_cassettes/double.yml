@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.double.net/api/publisher/v2/events/?action__type__name=sale&end_date=01/08/2014&format=json&start_date=01/07/2014
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Token <DOUBLE_API_KEY>
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 09 Oct 2014 14:35:41 GMT
+      Content-Type:
+      - application/json
+      Connection:
+      - keep-alive
+      Server:
+      - gunicorn/19.1.1
+      Vary:
+      - Accept, Accept-Language, Cookie
+      Content-Language:
+      - sv
+      Allow:
+      - GET, OPTIONS
+    body:
+      encoding: UTF-8
+      string: '[{"id": 123456, "time": "2014-01-07T12:00:12.862Z", "program": 123,
+        "program_name": "Kwik-E-Mart", "ad": 12, "coupon": null, "channel": 12345, "channel_name":
+        "example.com", "action": {"id": 123, "name": "Sale", "type": {"name": "sale"}},
+        "commission": {"id": 1234567, "credit_amount": 19.87, "credit_currency": "SEK"},
+        "ip": "12.34.456.89", "epi": "abc123", "epi2": null,
+        "pending": false, "quarantine": false, "status": "allowed", "quantity": 1}]'
+    http_version:
+  recorded_at: Thu, 09 Oct 2014 14:35:40 GMT
+recorded_with: VCR 2.9.3

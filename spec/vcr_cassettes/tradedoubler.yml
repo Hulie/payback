@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://login.tradedoubler.com/pan/aReport3Key.action?currencyId=SEK&endDate=2014-10-11&format=XML&key=<TRADEDOUBLER_API_KEY>&reportName=aAffiliateEventBreakdownReport&startDate=2014-10-10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.39.6
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Sat, 11 Oct 2014 12:59:46 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - JSESSIONID=FA8FA7259AE468CD740D2817F65C7273.tdprodapp71; Path=/pan
+      Content-Disposition:
+      - attachment; filename="aAffiliateEventBreakdownReport.xml"
+      Content-Language:
+      - en
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Type:
+      - text/xml;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<report title=\"Avslut-
+        och leadrapport\" name=\"aAffiliateEventBreakdownReport\" time=\"2014-10-11
+        14:59\">\r\n\t<matrix rowcount=\"17\">\r\n\t\t<columns>\r\n\t\t\t<programName
+        type=\"string\">Program Namn</programName>\r\n\t\t\t<programId type=\"integer\">Program
+        ID</programId>\r\n\t\t\t<timeOfVisit type=\"datetime\">Tidpunkt för besöket</timeOfVisit>\r\n\t\t\t<timeOfEvent
+        type=\"datetime\">Tidpunkt för event</timeOfEvent>\r\n\t\t\t<timeInSession
+        type=\"string\">Tidpunkt i session</timeInSession>\r\n\t\t\t<lastModified
+        type=\"datetime\">Tidpunkt Senast uppdaterad</lastModified>\r\n\t\t\t<leadNR
+        type=\"string\">Leadnummer</leadNR>\r\n\t\t\t<orderNR type=\"string\">Ordernummer</orderNR>\r\n\t\t\t<epi1
+        type=\"string\">EPI EPI 1</epi1>\r\n\t\t\t<epi2 type=\"string\">EPI EPI 2</epi2>\r\n\t\t\t<eventName
+        type=\"string\">Event Namn</eventName>\r\n\t\t\t<eventId type=\"integer\">Event
+        ID</eventId>\r\n\t\t\t<pendingStatus type=\"string\">Event Status</pendingStatus>\r\n\t\t\t<pendingReason
+        type=\"string\">Anledning</pendingReason>\r\n\t\t\t<siteName type=\"string\">Webbplats
+        Namn</siteName>\r\n\t\t\t<siteId type=\"integer\">Webbplats ID</siteId>\r\n\t\t\t<graphicalElementName
+        type=\"string\">Annons Namn</graphicalElementName>\r\n\t\t\t<graphicalElementId
+        type=\"integer\">Annons ID</graphicalElementId>\r\n\t\t\t<productName type=\"string\">Produktinfo
+        Namn</productName>\r\n\t\t\t<productNumber type=\"string\">Produktinfo ID</productNumber>\r\n\t\t\t<productNrOf
+        type=\"string\">Produktinfo #</productNrOf>\r\n\t\t\t<productValue type=\"decimal\">Produktinfo
+        Produktvärde</productValue>\r\n\t\t\t<orderValue type=\"decimal\">Ordervärde</orderValue>\r\n\t\t\t<open_product_feeds_id
+        type=\"string\">Products Open API information Produkt-ID</open_product_feeds_id>\r\n\t\t\t<open_product_feeds_name
+        type=\"string\">Products Open API information Produktnamn</open_product_feeds_name>\r\n\t\t\t<voucher_code
+        type=\"string\">Vouchers Voucher code</voucher_code>\r\n\t\t\t<affiliateCommission
+        type=\"decimal\">Ersättning Publisher</affiliateCommission>\r\n\t\t\t<rewardPoints
+        type=\"integer\">Belöningspoäng</rewardPoints>\r\n\t\t\t<validon type=\"date\">Valid
+        On</validon>\r\n\t\t\t<pendingRule type=\"string\">Pending Rule</pendingRule>\r\n\t\t</columns>\r\n\t\t<rows>\r\n\t\t\t<row>\r\n\t\t\t\t<programName>Kwik-E-Mart</programName>\r\n\t\t\t\t<programId>1234</programId>\r\n\t\t\t\t<timeOfVisit>2014-10-10
+        00:09:40 CEST</timeOfVisit>\r\n\t\t\t\t<timeOfEvent>2014-10-10 00:13:05 CEST</timeOfEvent>\r\n\t\t\t\t<timeInSession>Y</timeInSession>\r\n\t\t\t\t<lastModified></lastModified>\r\n\t\t\t\t<leadNR></leadNR>\r\n\t\t\t\t<orderNR>123456</orderNR>\r\n\t\t\t\t<epi1>abc123</epi1>\r\n\t\t\t\t<epi2></epi2>\r\n\t\t\t\t<eventName>Köp</eventName>\r\n\t\t\t\t<eventId>654321</eventId>\r\n\t\t\t\t<pendingStatus>A</pendingStatus>\r\n\t\t\t\t<pendingReason></pendingReason>\r\n\t\t\t\t<siteName>example.com</siteName>\r\n\t\t\t\t<siteId>123</siteId>\r\n\t\t\t\t<graphicalElementName>standardtextlänk</graphicalElementName>\r\n\t\t\t\t<graphicalElementId>123456789</graphicalElementId>\r\n\t\t\t\t<productName></productName>\r\n\t\t\t\t<productNumber></productNumber>\r\n\t\t\t\t<productNrOf></productNrOf>\r\n\t\t\t\t<productValue></productValue>\r\n\t\t\t\t<orderValue>343.2</orderValue>\r\n\t\t\t\t<open_product_feeds_id></open_product_feeds_id>\r\n\t\t\t\t<open_product_feeds_name></open_product_feeds_name>\r\n\t\t\t\t<voucher_code></voucher_code>\r\n\t\t\t\t<affiliateCommission>19.87</affiliateCommission>\r\n\t\t\t\t<rewardPoints></rewardPoints>\r\n\t\t\t\t<validon></validon>\r\n\t\t\t\t<pendingRule></pendingRule>\r\n\t\t\t</row>\r\n\t\t</rows>\r\n\t</matrix>\r\n</report>\r\n"
+    http_version:
+  recorded_at: Sat, 11 Oct 2014 12:59:47 GMT
+recorded_with: VCR 2.9.3

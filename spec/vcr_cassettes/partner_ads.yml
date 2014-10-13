@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.partner-ads.com/dk/vissalg_xml.php
+    body:
+      encoding: US-ASCII
+      string: key=<PARTNER_ADS_API_KEY>&fra=14-10-10&til=14-10-11
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Sat, 11 Oct 2014 12:54:45 GMT
+      Server:
+      - Apache/1.3.33 (Debian GNU/Linux) mod_ssl/2.8.22 OpenSSL/0.9.7e PHP/4.3.10-22
+      X-Powered-By:
+      - PHP/4.3.10-22
+      Set-Cookie:
+      - PHPSESSID=3230ea4f3497844b210beb0f38e5acb6; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html; charset=iso-8859-1
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n<salgspec>\n\r\n<salg><type>salg</type>\n<programid>1234</programid>\n<program>Kwik-E-Mart</program>\n<dato>10-10-2014</dato>\n<tidspunkt>09:34:30</tidspunkt>\n<ordrenr>123456</ordrenr>\n<varenr>alle</varenr>\n<omsaetning>639.20</omsaetning>\n<provision>19.87</provision>\n<url>http://example.com</url>\n<uid>abc123</uid>\n<uid2></uid2>\n</salg>\n</salgspec>\n"
+    http_version:
+  recorded_at: Sat, 11 Oct 2014 12:54:53 GMT
+recorded_with: VCR 2.9.3
