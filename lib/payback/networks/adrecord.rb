@@ -23,7 +23,7 @@ module Payback
       end
 
       def parse(payload)
-        JSON.parse(payload)['result'].map do |item|
+        JSON.parse(payload).fetch('result', []).map do |item|
           Conversion.new(
             uid: item['id'],
             channel: URI::parse(item['channel']['url']).host.downcase,
