@@ -10,7 +10,7 @@ describe Payback::Networks::PartnerAds do
       records = instance.between('2014-10-10', '2014-10-11')
       records.first.tap do |record|
         record.uid.must_equal "123456"
-        record.commission.must_equal "19.87"
+        record.commission.must_equal 19.87
         record.epi.must_equal 'abc123'
         record.currency.must_equal 'DKK'
         record.network.must_equal 'partner_ads'

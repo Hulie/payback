@@ -26,6 +26,10 @@ module Payback
       @timestamp = Time.parse(string) if string
     end
 
+    def commission=(value)
+      @commission = value.to_f if value
+    end
+
     # TODO: Add GUID method?
     # def guid
     #   "#{network}-#{uid}"
