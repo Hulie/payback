@@ -6,8 +6,6 @@ module Payback
 
       MissingCredentialsError = Class.new(StandardError)
 
-      attr_accessor :debug
-
       def initialize(options = {})
         options.each do |key, value|
           public_send("#{key}=", value)
