@@ -26,7 +26,7 @@ module Payback
         JSON.parse(payload).fetch('result', []).map do |item|
           Conversion.new(
             uid: item['id'],
-            channel: URI::parse(item['channel']['url']).host.downcase,
+            channel: parse_host(item['channel']['url']),
             epi: item['epi'],
             timestamp: item['click'],
             commission: item['commission'].to_f / 100,

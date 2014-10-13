@@ -34,7 +34,7 @@ module Payback
             uid: data['sale_id'],
             network: 'affiliator',
             epi: data['epi'],
-            channel: URI::parse(data['website']).host.downcase,
+            channel: parse_host(data['website']),
             commission: data['commission'],
             timestamp: [data['click_date'], data['click_time']].join(' '),
             status: data['status']

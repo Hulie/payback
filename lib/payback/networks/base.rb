@@ -55,6 +55,12 @@ module Payback
         ENV[variable_name]
       end
 
+      def parse_host(url)
+        if host = URI::parse(url).host
+          host.downcase
+        end
+      end
+
       def safe_extractor(node, selector)
         if node = node.at_css(selector)
           node.text
