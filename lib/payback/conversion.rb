@@ -23,11 +23,11 @@ module Payback
     end
 
     def timestamp=(string)
-      @timestamp = Time.parse(string) if string
+      @timestamp = string ? Time.parse(string) : nil
     end
 
     def commission=(value)
-      @commission = value.to_f if value
+      @commission = value ? value.to_f : nil
     end
 
     # TODO: Add GUID method?
