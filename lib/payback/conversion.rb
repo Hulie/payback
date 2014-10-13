@@ -39,9 +39,5 @@ module Payback
       Hash[ATTRIBUTES.map { |key| [key, send(key)] }]
     end
 
-    def valid?
-      attributes.values.all? { |x| !x.to_s.strip.empty? }
-    end
-
   end
 end
