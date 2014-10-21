@@ -15,7 +15,7 @@ describe Payback::Networks::Zanox do
         record.currency.must_equal 'SEK'
         record.network.must_equal 'zanox'
         record.channel.must_equal 'example.com'
-        record.timestamp.must_equal Time.parse('2014-10-12T22:17:59.547+02:00')
+        record.timestamp.must_equal Time.parse('2014-10-12T22:27:54.917+02:00')
         record.program.must_equal 'Kwik-E-Mart'
       end
     end

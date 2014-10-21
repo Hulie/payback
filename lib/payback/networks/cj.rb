@@ -53,7 +53,7 @@ module Payback
             epi: safe_extractor(node, 'sid'),
             channel: safe_extractor(node, 'website-id'),
             commission: safe_extractor(node, 'commission-amount'),
-            timestamp: safe_extractor(node, 'event-date')
+            timestamp: safe_extractor(node, 'posting-date')
           )
         end
       end

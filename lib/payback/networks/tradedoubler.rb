@@ -32,7 +32,7 @@ module Payback
             epi: safe_extractor(node, 'epi1'),
             channel: safe_extractor(node, 'siteName'),
             commission: safe_extractor(node, 'affiliateCommission'),
-            timestamp: safe_extractor(node, 'timeOfVisit')
+            timestamp: safe_extractor(node, 'timeOfEvent')
           )
         end
       end

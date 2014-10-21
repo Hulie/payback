@@ -15,7 +15,7 @@ describe Payback::Networks::Webgains do
         record.currency.must_equal 'GBP'
         record.network.must_equal 'webgains'
         record.channel.must_equal 'example.com'
-        record.timestamp.must_equal Time.parse('2014-10-10 10:26:59 +0200')
+        record.timestamp.must_equal Time.parse('2014-10-10T11:02:48')
         record.program.must_equal 'Kwik-E-Mart'
       end
     end

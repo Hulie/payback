@@ -27,7 +27,7 @@ module Payback
               epi: safe_extractor(node, 'reference'),
               channel: channel_name,
               commission: safe_extractor(node, 'commission'),
-              timestamp: safe_extractor(node, 'originatingClickDate')
+              timestamp: safe_extractor(node, 'registrationDate')
             )
           end
         end.flatten

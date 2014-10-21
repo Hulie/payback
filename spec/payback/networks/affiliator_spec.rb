@@ -15,7 +15,7 @@ describe Payback::Networks::Affiliator do
         record.currency.must_equal 'SEK'
         record.network.must_equal 'affiliator'
         record.channel.must_equal 'www.example.com'
-        record.timestamp.must_equal Time.parse('2012-09-18 20:41:40')
+        record.timestamp.must_equal Time.parse('2012-09-18 20:49:32')
         record.program.must_equal 'Kwik-E-Mart'
         record.status.must_equal "1"
       end

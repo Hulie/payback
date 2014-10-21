@@ -44,7 +44,7 @@ module Payback
             epi: item['epi'],
             channel: item['channelName'],
             commission: item['commission'],
-            timestamp: item['clickDate']
+            timestamp: item['transactionDate']
           )
         end
       end

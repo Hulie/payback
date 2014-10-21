@@ -35,7 +35,10 @@ module Payback
             currency: nil,
             network: 'adrecord',
             program: item['program']['name'],
-            status: item['status']
+            status: item['status'],
+            timestamp: item['changes'].find do |obj|
+              obj['type'] == 'transaction registered'
+            end['date']
           )
         end
       end

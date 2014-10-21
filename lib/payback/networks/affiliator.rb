@@ -38,8 +38,8 @@ module Payback
             epi: data['epi'],
             channel: parse_host(data['website']),
             commission: data['commission'],
-            timestamp: [data['click_date'], data['click_time']].join(' '),
-            status: data['status']
+            status: data['status'],
+            timestamp: [data['date'], data['time']].join(' ')
           )
         end
       end

@@ -82,7 +82,7 @@ module Payback
             epi: safe_extractor(node, 'gpp#zpar0'),
             channel: safe_extractor(node, 'adspace'),
             commission: safe_extractor(node, 'commission'),
-            timestamp: safe_extractor(node, 'clickDate')
+            timestamp: safe_extractor(node, 'trackingDate')
           )
         end
       end

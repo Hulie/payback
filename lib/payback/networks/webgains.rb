@@ -37,7 +37,7 @@ module Payback
             epi: safe_extractor(node, 'clickRef'),
             channel: safe_extractor(node, 'campaignName'),
             commission: safe_extractor(node, 'commission'),
-            timestamp: safe_extractor(node, 'clickthroughTime')
+            timestamp: safe_extractor(node, 'date')
           )
         end
       end

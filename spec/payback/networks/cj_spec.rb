@@ -15,7 +15,7 @@ describe Payback::Networks::Cj do
         record.currency.must_equal nil
         record.network.must_equal 'cj'
         record.channel.must_equal '555'
-        record.timestamp.must_equal Time.parse('2012-09-17T01:51:07-0700')
+        record.timestamp.must_equal Time.parse('2012-09-17T03:00:13-0700')
         record.program.must_equal 'Kwik-E-Mart'
       end
     end
