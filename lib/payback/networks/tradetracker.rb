@@ -43,7 +43,7 @@ module Payback
           client.request :authenticate do
             soap.body = {
               customerID: user_id,
-              passphrase: auth_key
+              passphrase: api_key
             }
           end
         end
