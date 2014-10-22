@@ -7,7 +7,7 @@ module Payback
   module Networks
     class Tradetracker < Base
 
-      required_credentials :user_id, :auth_key
+      required_credentials :user_id, :api_key
 
       URL = "http://ws.tradetracker.com/soap/affiliate?wsdl"
 
