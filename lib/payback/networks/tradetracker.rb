@@ -14,7 +14,6 @@ module Payback
       private
 
       def fetch(from, to)
-        authenticate
         get_affiliate_data.map do |channel_name, id|
           response = get_conversions(id, from, to)
           document = Nokogiri::XML(response.to_xml)
@@ -36,35 +35,34 @@ module Payback
       private
 
         def client
-          @client ||= Savon.client(URL)
+          @client ||= Savon.client(wsdl: URL)
+        end
+
+        def auth_cookies
+          @auth_cookies ||= authenticate
         end
 
         def authenticate
-          client.request :authenticate do
-            soap.body = {
-              customerID: user_id,
-              passphrase: api_key
-            }
-          end
+          response = client.call(:authenticate, message: {
+            'customerID' => user_id,
+            'passphrase' => api_key
+          })
+          response.http.cookies
         end
 
         def get_affiliate_data
-          response = client.request :getAffiliateSites do
-            soap.body = { options: {} }
-          end
+          response = client.call(:get_affiliate_sites,
+            message: { options: {} }, cookies: auth_cookies)
           Hash[*Nokogiri::XML(response.to_xml).css('item').map do |item|
             [item.at_css('name').text, item.at_css('ID').text]
           end.flatten]
         end
 
-        # Setting up a Savon::Client representing a SOAP service.
         def get_conversions(affiliate_id, from, to)
-          response = client.request :get_conversion_transactions do
-            soap.body = {
-              options: { registrationDateFrom: from, registrationDateTo: to },
-              affiliateSiteID: affiliate_id
-            }
-          end
+          response = client.call(:get_conversion_transactions, message: {
+            options: { 'registrationDateFrom' => from, 'registrationDateTo' => to },
+            'affiliateSiteID' => affiliate_id
+          }, cookies: auth_cookies)
           response if response.success?
         end
 

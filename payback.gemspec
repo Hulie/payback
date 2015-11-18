@@ -17,10 +17,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "excon"
-  spec.add_dependency "savon"
-  spec.add_dependency "mechanize"
-  spec.add_dependency "ruby-hmac"
+  spec.add_dependency 'excon', '~> 0.42', '>= 0.42.0'
+  spec.add_dependency 'savon', '~> 2.11.1', '>= 2.0.0'
+  spec.add_dependency 'mechanize', '~> 2.7', '>= 2.7.3'
+  spec.add_dependency 'ruby-hmac', '~> 0.4', '>= 0.4.0'
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"

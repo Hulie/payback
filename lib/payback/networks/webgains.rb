@@ -12,18 +12,14 @@ module Payback
       private
 
       def client
-        @client ||= Savon.client("http://ws.webgains.com/aws.php")
+        @client ||= Savon.client(log_level: :info) do
+          wsdl "http://ws.webgains.com/aws.php"
+        end
       end
 
       def fetch(from, to)
-        response = client.request :get_full_earnings_with_currency do
-          soap.body = {
-            username: username,
-            password: password,
-            startdate: from,
-            enddate: to
-          }
-        end
+        response = client.call(:get_full_earnings_with_currency,
+          message: { username: username, password: password, startdate: from, enddate: to })
         parse(response.to_xml) if response.success?
       end
 
