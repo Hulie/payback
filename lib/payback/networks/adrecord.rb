@@ -30,7 +30,6 @@ module Payback
             uid: item['id'],
             channel: parse_host(item['channel']['url']),
             epi: item['epi'],
-            timestamp: item['click'],
             commission: item['commission'].to_f / 100,
             currency: nil,
             network: 'adrecord',
