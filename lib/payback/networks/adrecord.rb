@@ -21,11 +21,18 @@ module Payback
           query: { start: from, stop: to },
           headers: { 'Apikey' => api_key }
         )
-        parse(res.body)
+
+        data = JSON.parse(res.body)
+
+        if data['status'] == 'error'
+          raise data['message']
+        else
+          parse(data)
+        end
       end
 
-      def parse(payload)
-        JSON.parse(payload).fetch('result', []).map do |item|
+      def parse(data)
+        data.fetch('result', []).map do |item|
           Conversion.new(
             uid: item['id'],
             channel: parse_host(item['channel']['url']),

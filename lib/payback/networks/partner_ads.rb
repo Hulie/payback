@@ -14,11 +14,19 @@ module Payback
           fra: from.strftime("%y-%m-%d"),
           til: to.strftime("%y-%m-%d")
         ), headers: { "Content-Type" => "application/x-www-form-urlencoded" })
-        parse(res.body)
+
+        document = Nokogiri::XML(res.body)
+
+        if document.errors.any?
+          raise res.body
+        else
+          parse(document)
+        end
+
       end
 
-      def parse(payload)
-        Nokogiri::XML(payload).css('salg').map do |node|
+      def parse(document)
+        document.css('salg').map do |node|
           Conversion.new(
             program: safe_extractor(node, 'program'),
             currency: 'DKK',

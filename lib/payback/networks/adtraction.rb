@@ -25,7 +25,15 @@ module Payback
           headers: { 'X-Token' => api_key, 'Accept' => 'application/json',
             'Content-Type' => 'application/json' }
         )
-        parse(res.body)
+
+        data = JSON.parse(res.body)
+
+        if err = data.is_a?(Hash) && data['error']
+          raise(err)
+        else
+          parse(data)
+        end
+
       end
 
       # TODO: Should support TimeZone.
@@ -34,8 +42,8 @@ module Payback
         date.to_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
       end
 
-      def parse(payload)
-        JSON.parse(payload).map do |item|
+      def parse(data)
+        data.map do |item|
           Conversion.new(
             program: item['programName'],
             currency: item['currency'],

@@ -23,11 +23,19 @@ module Payback
           },
           headers: { 'Authorization' => "Token #{api_key}" }
         )
-        parse(res.body)
+
+        data = JSON.parse(res.body)
+
+        if data.is_a?(Hash) && data['detail']
+          raise data['detail']
+        else
+          parse(data)
+        end
+
       end
 
-      def parse(payload)
-        JSON.parse(payload).map do |item|
+      def parse(data)
+        data.map do |item|
           Conversion.new(
             program: item['program_name'],
             currency: (item['commission'] || {})['credit_currency'],
