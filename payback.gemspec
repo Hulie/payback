@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'savon', '~> 2.11.1', '>= 2.0.0'
   spec.add_dependency 'mechanize', '~> 2.7', '>= 2.7.3'
   spec.add_dependency 'ruby-hmac', '~> 0.4', '>= 0.4.0'
+  spec.add_dependency 'httpclient', '~> 2.6'
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
