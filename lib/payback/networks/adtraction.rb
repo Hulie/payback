@@ -11,6 +11,7 @@ module Payback
 
       HOST = 'https://api.adtraction.com'
       PATH = '/v1/affiliate/transactions'
+      MAX_RETRIES = 6
 
       private
 
@@ -23,7 +24,8 @@ module Payback
             toDate: date_to_utc(to)
           }),
           headers: { 'X-Token' => api_key, 'Accept' => 'application/json',
-            'Content-Type' => 'application/json' }
+            'Content-Type' => 'application/json' },
+          idempotent: true, retry_limit: MAX_RETRIES
         )
 
         data = JSON.parse(res.body)
