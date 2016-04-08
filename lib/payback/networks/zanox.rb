@@ -3,7 +3,6 @@
 # http://wiki.zanox.com/en/Web_Services
 #
 
-require 'mechanize'
 require 'base64'
 require 'hmac-sha1'
 require 'open-uri'
@@ -61,12 +60,14 @@ module Payback
 
           parse(res.body)
 
-        rescue Mechanize::ResponseCodeError => e
+        rescue Excon::Errors::Error => e
           if (retry_count += 1) < MAX_RETRIES
-            logger.info "zanox | (#{res.status}) Try %d/%d: still processing, retry in %d seconds..." %
+            logger.info "zanox | Try %d/%d: still processing, retry in %d seconds..." %
               [retry_count, MAX_RETRIES, RETRY_INTERVAL*retry_count]
             sleep(RETRY_INTERVAL*retry_count)
             retry
+          else
+            raise(e)
           end
         end
 
