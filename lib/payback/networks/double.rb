@@ -27,7 +27,7 @@ module Payback
         data = JSON.parse(res.body)
 
         if data.is_a?(Hash) && data['detail']
-          raise data['detail']
+          raise Payback::RequestError.new, data['detail']
         else
           parse(data)
         end

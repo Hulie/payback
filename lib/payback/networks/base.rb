@@ -4,8 +4,6 @@ module Payback
   module Networks
     class Base
 
-      MissingCredentialsError = Class.new(StandardError)
-
       def initialize(options = {})
         options.each do |key, value|
           public_send("#{key}=", value)
@@ -103,7 +101,7 @@ module Payback
         else
           error_msg = "Missing credentials for #{self.class}. Must supply " <<
           "#{credentials.join(', ')}"
-          raise MissingCredentialsError, error_msg
+          raise Payback::MissingCredentialsError, error_msg
         end
       end
 

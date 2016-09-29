@@ -31,7 +31,7 @@ module Payback
         data = JSON.parse(res.body)
 
         if err = data.is_a?(Hash) && data['error']
-          raise(err)
+          raise Payback::RequestError.new, err
         else
           parse(data)
         end

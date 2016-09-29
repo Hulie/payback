@@ -25,7 +25,7 @@ module Payback
         data = JSON.parse(res.body)
 
         if data['status'] == 'error'
-          raise data['message']
+          raise Payback::RequestError.new, data['message']
         else
           parse(data)
         end

@@ -1,4 +1,5 @@
 require "payback/version"
+require 'payback/error'
 require 'payback/conversion'
 
 require 'open-uri'
