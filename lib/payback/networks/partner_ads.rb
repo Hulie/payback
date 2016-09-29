@@ -8,17 +8,29 @@ module Payback
 
       private
 
+      def endpoint
+        @endpoint ||= begin
+          uri = URI(URL)
+          uri.query = URI.encode_www_form(key: api_key)
+          uri.to_s
+        end
+      end
+
       def fetch(from, to)
-        res = Excon.post(URL, body: URI.encode_www_form(
-          key: api_key,
+
+        post_body = URI.encode_www_form(
           fra: from.strftime("%y-%m-%d"),
           til: to.strftime("%y-%m-%d")
-        ), headers: { "Content-Type" => "application/x-www-form-urlencoded" })
+        )
+
+        res = Excon.post(endpoint,
+          body: post_body,
+          headers: { "Content-Type" => "application/x-www-form-urlencoded" })
 
         document = Nokogiri::XML(res.body)
 
         if document.errors.any?
-          raise res.body
+          raise Payback::RequestError.new, res.body
         else
           parse(document)
         end
