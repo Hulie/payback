@@ -12,7 +12,7 @@ module Payback
     # Timestamp
 
     ATTRIBUTES = %w(uid epi commission currency network
-      channel program status timestamp)
+      channel program status timestamp referrer)
 
     attr_accessor *ATTRIBUTES
 
