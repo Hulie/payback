@@ -1,0 +1,1276 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.tradetracker.com/soap/affiliate?wsdl
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:09 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:09 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d491bac626962af5eb67ea08276fad4aa1475134089; expires=Fri, 29-Sep-17
+        07:28:09 GMT; path=/; domain=.tradetracker.com; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.03","duration_db":"0.00","duration_web":0.03,"memory_usage":"3.41","request_uri":"\/soap\/affiliate?wsdl"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db77d34c60a48-ARN
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<definitions name=\"Affiliate\"\n\ttargetNamespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\txmlns:tns=\"https://ws.tradetracker.com/soap/affiliate\"\n\txmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"\n\txmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\"\n\txmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n\txmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\"\n\txmlns=\"http://schemas.xmlsoap.org/wsdl/\">\n\n<!--
+        Types -->\n\n<types>\n\t<xsd:schema elementFormDefault=\"qualified\" targetNamespace=\"https://ws.tradetracker.com/soap/affiliate\">\n\t\t<xsd:import
+        namespace=\"http://schemas.xmlsoap.org/soap/encoding/\" />\n\t\t<xsd:import
+        namespace=\"http://schemas.xmlsoap.org/wsdl/\" />\n\n\t\t<!-- Locales -->\n\t\t<xsd:simpleType
+        name=\"Locale\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t\t\t\t\t<xsd:enumeration
+        value=\"nl_BE\" />\t\t\t\t<xsd:enumeration value=\"fr_BE\" />\t\t\t\t<xsd:enumeration
+        value=\"cs_CZ\" />\t\t\t\t<xsd:enumeration value=\"da_DK\" />\t\t\t\t<xsd:enumeration
+        value=\"de_DE\" />\t\t\t\t<xsd:enumeration value=\"et_EE\" />\t\t\t\t<xsd:enumeration
+        value=\"en_GB\" />\t\t\t\t<xsd:enumeration value=\"es_ES\" />\t\t\t\t<xsd:enumeration
+        value=\"fr_FR\" />\t\t\t\t<xsd:enumeration value=\"it_IT\" />\t\t\t\t<xsd:enumeration
+        value=\"hu_HU\" />\t\t\t\t<xsd:enumeration value=\"nl_NL\" />\t\t\t\t<xsd:enumeration
+        value=\"nb_NO\" />\t\t\t\t<xsd:enumeration value=\"de_AT\" />\t\t\t\t<xsd:enumeration
+        value=\"pl_PL\" />\t\t\t\t<xsd:enumeration value=\"fi_FI\" />\t\t\t\t<xsd:enumeration
+        value=\"sv_SE\" />\t\t\t\t<xsd:enumeration value=\"ru_RU\" />\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\n\t\t<!--
+        Affiliate site -->\n\n\t\t<xsd:complexType name=\"AffiliateSites\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:AffiliateSite[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"AffiliateSite\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"URL\" type=\"xsd:normalizedString\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"info\" type=\"tns:AffiliateSiteInfo\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"AffiliateSiteInfo\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"type\" type=\"tns:AffiliateSiteType\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"category\" type=\"tns:AffiliateSiteCategory\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"description\" type=\"xsd:string\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"creationDate\" type=\"xsd:date\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"status\" type=\"tns:AffiliateSiteStatus\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType name=\"AffiliateSiteTypes\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:AffiliateSiteType[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"AffiliateSiteType\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:normalizedString\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"AffiliateSiteCategories\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:AffiliateSiteCategory[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"AffiliateSiteCategory\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"name\" type=\"xsd:normalizedString\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:simpleType
+        name=\"AffiliateSiteStatus\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"pending\" />\n\t\t\t\t<xsd:enumeration value=\"accepted\" />\n\t\t\t\t<xsd:enumeration
+        value=\"rejected\" />\n\t\t\t\t<xsd:enumeration value=\"onhold\" />\n\t\t\t\t<xsd:enumeration
+        value=\"signedout\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\n\t\t<!--
+        Campaign -->\n\n\t\t<xsd:complexType name=\"Campaigns\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:Campaign[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"Campaign\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"URL\" type=\"xsd:normalizedString\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"info\" type=\"tns:CampaignInfo\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignInfo\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"category\" type=\"tns:CampaignCategory\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"subCategories\" type=\"tns:CampaignSubCategories\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"campaignDescription\" type=\"xsd:string\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"shopDescription\"
+        type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"targetGroup\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"characteristics\" type=\"xsd:string\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"imageURL\" type=\"xsd:normalizedString\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"trackingURL\" type=\"xsd:normalizedString\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"commission\"
+        type=\"tns:CampaignCommission\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"assignmentStatus\"
+        type=\"tns:CampaignAssignmentStatus\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"startDate\" type=\"xsd:date\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"stopDate\" type=\"xsd:date\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"clickToConversion\" type=\"xsd:duration\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"policySearchEngineMarketingStatus\"
+        type=\"tns:CampaignAffiliatePolicyStatus\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"policyEmailMarketingStatus\" type=\"tns:CampaignAffiliatePolicyStatus\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"policyCashbackStatus\"
+        type=\"tns:CampaignAffiliatePolicyStatus\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"policyDiscountCodeStatus\" type=\"tns:CampaignAffiliatePolicyStatus\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"deeplinkingSupported\"
+        type=\"xsd:boolean\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"referencesSupported\"
+        type=\"xsd:boolean\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"leadMaximumAssessmentInterval\"
+        type=\"xsd:duration\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"leadAverageAssessmentInterval\" type=\"xsd:duration\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"saleMaximumAssessmentInterval\"
+        type=\"xsd:duration\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"saleAverageAssessmentInterval\" type=\"xsd:duration\" nillable=\"true\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType name=\"CampaignCategories\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:CampaignCategory[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignCategory\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"categories\" type=\"tns:CampaignCategories\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignSubCategories\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:CampaignSubCategory[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignSubCategory\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"name\" type=\"xsd:string\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignProduct\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:string\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignCommission\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"impressionCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"clickCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"fixedCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"leadCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"saleCommissionFixed\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"saleCommissionVariable\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"iLeadCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"iSaleCommissionFixed\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"iSaleCommissionVariable\" type=\"xsd:decimal\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:simpleType
+        name=\"CampaignAssignmentStatus\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"notsignedup\" />\n\t\t\t\t<xsd:enumeration value=\"pending\" />\n\t\t\t\t<xsd:enumeration
+        value=\"accepted\" />\n\t\t\t\t<xsd:enumeration value=\"rejected\" />\n\t\t\t\t<xsd:enumeration
+        value=\"onhold\" />\n\t\t\t\t<xsd:enumeration value=\"signedout\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\t\t<xsd:simpleType
+        name=\"CampaignSubscriptionAction\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"subscribe\" />\n\t\t\t\t<xsd:enumeration value=\"unsubscribe\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\t\t<xsd:complexType
+        name=\"CampaignCommissionExtended\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"impressionCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"clickCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"fixedCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"products\" type=\"tns:CampaignCommissionProducts\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType name=\"CampaignCommissionProducts\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:CampaignCommissionProduct[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignCommissionProduct\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignProduct\" type=\"tns:CampaignProduct\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"leadCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"saleCommissionFixed\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"saleCommissionVariable\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"iLeadCommission\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"iSaleCommissionFixed\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"iSaleCommissionVariable\" type=\"xsd:decimal\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:simpleType
+        name=\"CampaignAffiliatePolicyStatus\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"allowed\" />\n\t\t\t\t<xsd:enumeration value=\"limited\" />\n\t\t\t\t<xsd:enumeration
+        value=\"disallowed\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\n\t\t<!--
+        Campaign news item -->\n\t\t<xsd:complexType name=\"CampaignNewsItems\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:CampaignNewsItem[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignNewsItem\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"campaign\" type=\"tns:Campaign\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"campaignNewsType\" type=\"tns:CampaignNewsType\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"title\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"content\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"publishDate\" type=\"xsd:date\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"expirationDate\" type=\"xsd:date\" nillable=\"true\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:simpleType name=\"CampaignNewsType\">\n\t\t\t<xsd:restriction
+        base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration value=\"campaign_start\"
+        />\n\t\t\t\t<xsd:enumeration value=\"campaign_stop\" />\n\t\t\t\t<xsd:enumeration
+        value=\"campaign_update_general\" />\n\t\t\t\t<xsd:enumeration value=\"campaign_update_vouchercode\"
+        />\n\t\t\t\t<xsd:enumeration value=\"campaign_update_consumer\" />\n\t\t\t\t<xsd:enumeration
+        value=\"campaign_update_commission\" />\n\t\t\t\t<xsd:enumeration value=\"campaign_update_incentive\"
+        />\n\t\t\t\t<xsd:enumeration value=\"campaign_update_material\" />\n\t\t\t\t<xsd:enumeration
+        value=\"campaign_update_feed\" />\n\t\t\t\t<xsd:enumeration value=\"campaign_update_urgent\"
+        />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\n\t\t<!-- Material -->\n\t\t<xsd:complexType
+        name=\"MaterialBannerDimensions\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:MaterialBannerDimension[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"MaterialBannerDimension\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"width\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"height\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"isCommon\" type=\"xsd:boolean\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"isMobile\" type=\"xsd:boolean\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"MaterialItems\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:MaterialItem[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"MaterialItem\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"campaign\" type=\"tns:Campaign\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"creationDate\" type=\"xsd:dateTime\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"modificationDate\" type=\"xsd:dateTime\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"materialBannerDimension\" type=\"tns:MaterialBannerDimension\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"referenceSupported\"
+        type=\"xsd:boolean\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"description\"
+        type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"conditions\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"validFromDate\" type=\"xsd:date\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"validToDate\" type=\"xsd:date\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"discountFixed\"
+        type=\"xsd:decimal\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"discountVariable\" type=\"xsd:decimal\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"voucherCode\" type=\"xsd:string\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"code\" type=\"xsd:string\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:simpleType name=\"MaterialOutputType\">\n\t\t\t<xsd:restriction
+        base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration value=\"html\" />\n\t\t\t\t<xsd:enumeration
+        value=\"javascript\" />\n\t\t\t\t<xsd:enumeration value=\"iframe\" />\n\t\t\t\t<xsd:enumeration
+        value=\"popup\" />\n\t\t\t\t<xsd:enumeration value=\"popunder\" />\n\t\t\t\t<xsd:enumeration
+        value=\"rss\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\n\t\t<!--
+        Transaction -->\n\n\t\t<xsd:complexType name=\"ClickTransactions\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:ClickTransaction[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ClickTransaction\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"campaign\" type=\"tns:Campaign\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"reference\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"transactionType\" type=\"tns:TransactionType\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"transactionStatus\" type=\"tns:TransactionStatus\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"currency\" type=\"xsd:normalizedString\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"commission\" type=\"xsd:decimal\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"registrationDate\" type=\"xsd:dateTime\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"refererURL\" type=\"xsd:normalizedString\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"paidOut\" type=\"xsd:boolean\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType name=\"ConversionTransactions\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:ConversionTransaction[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ConversionTransaction\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaign\" type=\"tns:Campaign\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignProduct\" type=\"tns:CampaignProduct\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"reference\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"transactionType\" type=\"tns:TransactionType\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"transactionStatus\" type=\"tns:TransactionStatus\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"description\" type=\"xsd:string\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"currency\"
+        type=\"xsd:normalizedString\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"commission\"
+        type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"orderAmount\"
+        type=\"xsd:decimal\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"IP\" type=\"xsd:normalizedString\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"registrationDate\" type=\"xsd:dateTime\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"assessmentDate\" type=\"xsd:dateTime\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"clickToConversion\" type=\"xsd:duration\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"originatingClickDate\" type=\"xsd:dateTime\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"rejectionReason\"
+        type=\"tns:TransactionRejectionReason\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"paidOut\" type=\"xsd:boolean\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"countryCode\" type=\"xsd:string\" nillable=\"true\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:simpleType name=\"TransactionType\">\n\t\t\t<xsd:restriction
+        base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration value=\"click\" />\n\t\t\t\t<xsd:enumeration
+        value=\"lead\" />\n\t\t\t\t<xsd:enumeration value=\"sale\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\t\t<xsd:simpleType
+        name=\"TransactionStatus\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"pending\" />\n\t\t\t\t<xsd:enumeration value=\"accepted\" />\n\t\t\t\t<xsd:enumeration
+        value=\"rejected\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\t\t<xsd:simpleType
+        name=\"TransactionRejectionReason\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"returned_goods\" />\n\t\t\t\t<xsd:enumeration value=\"out_of_stock\"
+        />\n\t\t\t\t<xsd:enumeration value=\"payment_not_received\" />\n\t\t\t\t<xsd:enumeration
+        value=\"invalid_transaction\" />\n\t\t\t\t<xsd:enumeration value=\"order_canceled\"
+        />\n\t\t\t\t<xsd:enumeration value=\"duplicate_order\" />\n\t\t\t\t<xsd:enumeration
+        value=\"test_transaction\" />\n\t\t\t\t<xsd:enumeration value=\"attributed_to_other_channel\"
+        />\n\t\t\t\t<xsd:enumeration value=\"violates_campaign_terms\" />\n\t\t\t\t<xsd:enumeration
+        value=\"invalid_customer_details\" />\n\t\t\t\t<xsd:enumeration value=\"customer_unreachable\"
+        />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\n\t\t<!-- Report -->\n\n\t\t<xsd:complexType
+        name=\"ReportData\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"overallImpressionCount\" type=\"xsd:integer\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"uniqueImpressionCount\" type=\"xsd:integer\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"impressionCommission\" type=\"xsd:decimal\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"overallClickCount\"
+        type=\"xsd:integer\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"uniqueClickCount\" type=\"xsd:integer\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"clickCommission\" type=\"xsd:decimal\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"leadCount\" type=\"xsd:integer\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"leadCommission\"
+        type=\"xsd:decimal\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"saleCount\" type=\"xsd:integer\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"saleCommission\" type=\"xsd:decimal\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"fixedCommission\" type=\"xsd:decimal\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"CTR\" type=\"xsd:decimal\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"CLR\" type=\"xsd:decimal\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"CSR\" type=\"xsd:decimal\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"eCPM\" type=\"xsd:decimal\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"EPC\" type=\"xsd:decimal\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"totalCommission\"
+        type=\"xsd:decimal\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ReportCampaign\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:ReportCampaignElement[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ReportCampaignElement\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaign\" type=\"tns:Campaign\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"reportData\" type=\"tns:ReportData\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ReportReference\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:ReportReferenceElement[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ReportReferenceElement\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"reference\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaign\" type=\"tns:Campaign\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"reportData\" type=\"tns:ReportData\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\n\t\t<!--
+        Feed -->\n\n\t\t<xsd:complexType name=\"Feeds\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:Feed[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"Feed\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"campaign\" type=\"tns:Campaign\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"URL\" type=\"xsd:normalizedString\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"updateDate\" type=\"xsd:dateTime\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"updateInterval\" type=\"xsd:duration\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"productCount\" type=\"xsd:nonNegativeInteger\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"assignmentStatus\" type=\"tns:CampaignAssignmentStatus\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType name=\"FeedCategories\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:FeedCategory[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"FeedCategory\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"productCount\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"FeedProducts\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:FeedProduct[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"FeedProduct\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"identifier\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"name\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"productCategoryName\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"description\" type=\"xsd:string\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"price\" type=\"xsd:decimal\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"productURL\" type=\"xsd:normalizedString\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"imageURL\" type=\"xsd:normalizedString\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"additional\"
+        type=\"tns:FeedProductAdditional\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"FeedProductAdditional\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:FeedProductAdditionalElement[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"FeedProductAdditionalElement\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"name\" type=\"xsd:string\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"value\" type=\"xsd:string\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\n\t\t<!--
+        Payment -->\n\n\t\t<xsd:complexType name=\"Payments\">\n\t\t\t<xsd:complexContent>\n\t\t\t\t<xsd:restriction
+        base=\"SOAP-ENC:Array\">\n\t\t\t\t\t<xsd:attribute ref=\"SOAP-ENC:arrayType\"
+        wsdl:arrayType=\"tns:Payment[]\" />\n\t\t\t\t</xsd:restriction>\n\t\t\t</xsd:complexContent>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"Payment\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"invoiceNumber\" type=\"xsd:normalizedString\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"currency\" type=\"xsd:normalizedString\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"subTotal\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"VAT\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"endTotal\" type=\"xsd:decimal\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"billDate\" type=\"xsd:date\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"payDate\" type=\"xsd:date\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\n\t\t<!--
+        Extended input types -->\n\n\t\t<xsd:complexType name=\"AffiliateSiteFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"ID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"query\" type=\"xsd:string\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"affiliateSiteCategoryID\"
+        type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"affiliateSiteTypeID\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"affiliateSiteStatus\"
+        type=\"tns:AffiliateSiteStatus\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"limit\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"offset\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"sort\" type=\"tns:AffiliateSiteSort\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"sortDirection\"
+        type=\"tns:SortDirection\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"excludeInfo\" type=\"xsd:boolean\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"query\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignCategoryID\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"assignmentStatus\"
+        type=\"tns:CampaignAssignmentStatus\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"policySearchEngineMarketingStatus\" type=\"tns:CampaignAffiliatePolicyStatus\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"policyEmailMarketingStatus\"
+        type=\"tns:CampaignAffiliatePolicyStatus\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"policyCashbackStatus\" type=\"tns:CampaignAffiliatePolicyStatus\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"policyDiscountCodeStatus\"
+        type=\"tns:CampaignAffiliatePolicyStatus\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"limit\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"offset\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"sort\" type=\"tns:CampaignSort\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"sortDirection\"
+        type=\"tns:SortDirection\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"excludeInfo\" type=\"xsd:boolean\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"CampaignNewsItemFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"ID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"query\" type=\"xsd:string\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"campaignCategoryID\"
+        type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignNewsType\" type=\"tns:CampaignNewsType\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"limit\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"offset\"
+        type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"MaterialItemFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"query\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"campaignCategoryID\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"includeUnsubscribedCampaigns\"
+        type=\"xsd:boolean\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"materialBannerDimensionID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"reference\" type=\"xsd:string\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"limit\"
+        type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"offset\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"sort\" type=\"tns:MaterialItemSort\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"sortDirection\"
+        type=\"tns:SortDirection\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ClickTransactionFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"ID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"transactionStatus\" type=\"tns:TransactionStatus\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"registrationDateFrom\"
+        type=\"xsd:dateTime\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"registrationDateTo\" type=\"xsd:dateTime\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"reference\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"limit\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"offset\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ConversionTransactionFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"ID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"transactionType\" type=\"tns:TransactionType\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"transactionStatus\"
+        type=\"tns:TransactionStatus\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"registrationDateFrom\" type=\"xsd:dateTime\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"registrationDateTo\" type=\"xsd:dateTime\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"assessmentDateFrom\"
+        type=\"xsd:dateTime\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"assessmentDateTo\" type=\"xsd:dateTime\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"reference\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"limit\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"offset\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"sort\" type=\"tns:TransactionConversionSort\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"sortDirection\"
+        type=\"tns:SortDirection\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ReportAffiliateSiteFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"dateFrom\" type=\"xsd:date\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"dateTo\" type=\"xsd:date\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ReportCampaignFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"dateFrom\" type=\"xsd:date\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"dateTo\"
+        type=\"xsd:date\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"ReportReferenceFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"reference\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"dateFrom\" type=\"xsd:date\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"dateTo\"
+        type=\"xsd:date\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"FeedFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"ID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"campaignCategoryID\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"assignmentStatus\"
+        type=\"tns:CampaignAssignmentStatus\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType
+        name=\"FeedProductFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"feedID\" type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"feedCategoryName\" type=\"xsd:string\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"campaignID\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"campaignCategoryID\"
+        type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"query\" type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"priceFrom\" type=\"xsd:decimal\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"priceTo\" type=\"xsd:decimal\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"limit\"
+        type=\"xsd:nonNegativeInteger\" nillable=\"true\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"offset\" type=\"xsd:nonNegativeInteger\" nillable=\"true\"
+        />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\t\t<xsd:complexType name=\"PaymentFilter\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"billDateFrom\" type=\"xsd:date\" nillable=\"true\"
+        />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"billDateTo\" type=\"xsd:date\"
+        nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\n\t\t<xsd:complexType
+        name=\"CreateConversionTransactionOptions\">\n\t\t\t<xsd:sequence>\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignID\" type=\"xsd:nonNegativeInteger\" />\n\t\t\t\t<xsd:element
+        maxOccurs=\"1\" name=\"campaignProductID\" type=\"xsd:nonNegativeInteger\"
+        nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"characteristic\"
+        type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"remarks\"
+        type=\"xsd:string\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\" name=\"reference\"
+        type=\"xsd:string\" nillable=\"true\" />\n\t\t\t\t<xsd:element maxOccurs=\"1\"
+        name=\"transactionAmount\" type=\"xsd:decimal\" nillable=\"true\" />\n\t\t\t</xsd:sequence>\n\t\t</xsd:complexType>\n\n\t\t<!--
+        Sort types -->\n\t\t<xsd:simpleType name=\"SortDirection\">\n\t\t\t<xsd:restriction
+        base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration value=\"ascending\"
+        />\n\t\t\t\t<xsd:enumeration value=\"descending\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\t\t<xsd:simpleType
+        name=\"AffiliateSiteSort\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"ID\" />\n\t\t\t\t<xsd:enumeration value=\"name\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\t\t<xsd:simpleType
+        name=\"CampaignSort\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"ID\" />\n\t\t\t\t<xsd:enumeration value=\"name\" />\n\t\t\t\t<xsd:enumeration
+        value=\"startDate\" />\n\t\t\t\t<xsd:enumeration value=\"stopDate\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\t\t<xsd:simpleType
+        name=\"MaterialItemSort\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"ID\" />\n\t\t\t\t<xsd:enumeration value=\"creationDate\" />\n\t\t\t\t<xsd:enumeration
+        value=\"modificationDate\" />\n\t\t\t\t<xsd:enumeration value=\"campaignName\"
+        />\n\t\t\t\t<xsd:enumeration value=\"elementSize\" />\n\t\t\t\t<xsd:enumeration
+        value=\"linkText\" />\n\t\t\t\t<xsd:enumeration value=\"title\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\t\t<xsd:simpleType
+        name=\"TransactionConversionSort\">\n\t\t\t<xsd:restriction base=\"xsd:normalizedString\">\n\t\t\t\t<xsd:enumeration
+        value=\"ID\" />\n\t\t\t\t<xsd:enumeration value=\"assessmentDate\" />\n\t\t\t\t<xsd:enumeration
+        value=\"registrationDate\" />\n\t\t\t</xsd:restriction>\n\t\t</xsd:simpleType>\n\n\t</xsd:schema>\n</types>\n\n<!--
+        Messages -->\n\n<message name=\"AuthenticateMessage\">\n\t<part name=\"customerID\"
+        type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"passphrase\" type=\"xsd:normalizedString\"
+        />\n\t<part name=\"sandbox\" type=\"xsd:boolean\" />\n\t<part name=\"locale\"
+        type=\"tns:Locale\" />\n\t<part name=\"demo\" type=\"xsd:boolean\" />\n</message>\n<message
+        name=\"AuthenticateResponseMessage\" />\n\n<message name=\"GetAffiliateSitesMessage\">\n\t<part
+        name=\"options\" type=\"tns:AffiliateSiteFilter\" />\n</message>\n<message
+        name=\"GetAffiliateSitesResponseMessage\">\n\t<part name=\"affiliateSites\"
+        type=\"tns:AffiliateSites\" />\n</message>\n<message name=\"GetAffiliateSiteTypesMessage\"
+        />\n<message name=\"GetAffiliateSiteTypesResponseMessage\">\n\t<part name=\"affiliateSiteTypes\"
+        type=\"tns:AffiliateSiteTypes\" />\n</message>\n<message name=\"GetAffiliateSiteCategoriesMessage\"
+        />\n<message name=\"GetAffiliateSiteCategoriesResponseMessage\">\n\t<part
+        name=\"affiliateSiteCategories\" type=\"tns:AffiliateSiteCategories\" />\n</message>\n\n<message
+        name=\"GetCampaignsMessage\">\n\t<part name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\"
+        />\n\t<part name=\"options\" type=\"tns:CampaignFilter\" />\n</message>\n<message
+        name=\"GetCampaignsResponseMessage\">\n\t<part name=\"campaigns\" type=\"tns:Campaigns\"
+        />\n</message>\n<message name=\"GetCampaignCategoriesMessage\" />\n<message
+        name=\"GetCampaignCategoriesResponseMessage\">\n\t<part name=\"campaignCategories\"
+        type=\"tns:CampaignCategories\" />\n</message>\n<message name=\"GetCampaignCommissionExtendedMessage\">\n\t<part
+        name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"campaignID\"
+        type=\"xsd:nonNegativeInteger\" />\n</message>\n<message name=\"GetCampaignCommissionExtendedResponseMessage\">\n\t<part
+        name=\"campaignCommissionExtended\" type=\"tns:CampaignCommissionExtended\"
+        />\n</message>\n<message name=\"ChangeCampaignSubscriptionMessage\">\n\t<part
+        name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"campaignID\"
+        type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"subscriptionAction\" type=\"tns:CampaignSubscriptionAction\"
+        />\n</message>\n<message name=\"ChangeCampaignSubscriptionResponseMessage\"
+        />\n\n<message name=\"GetCampaignNewsItemsMessage\">\n\t<part name=\"options\"
+        type=\"tns:CampaignNewsItemFilter\" />\n</message>\n<message name=\"GetCampaignNewsItemsResponseMessage\">\n\t<part
+        name=\"campaignNewsItems\" type=\"tns:CampaignNewsItems\" />\n</message>\n\n<message
+        name=\"GetMaterialBannerDimensionsMessage\" />\n<message name=\"GetMaterialBannerDimensionsResponseMessage\">\n\t<part
+        name=\"materialBannerDimensions\" type=\"tns:MaterialBannerDimensions\" />\n</message>\n<message
+        name=\"GetMaterialBannerImageItemsMessage\">\n\t<part name=\"affiliateSiteID\"
+        type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"materialOutputType\" type=\"tns:MaterialOutputType\"
+        />\n\t<part name=\"options\" type=\"tns:MaterialItemFilter\" />\n</message>\n<message
+        name=\"GetMaterialBannerImageItemsResponseMessage\">\n\t<part name=\"materialItems\"
+        type=\"tns:MaterialItems\" />\n</message>\n<message name=\"GetMaterialBannerFlashItemsMessage\">\n\t<part
+        name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"materialOutputType\"
+        type=\"tns:MaterialOutputType\" />\n\t<part name=\"options\" type=\"tns:MaterialItemFilter\"
+        />\n</message>\n<message name=\"GetMaterialBannerFlashItemsResponseMessage\">\n\t<part
+        name=\"materialItems\" type=\"tns:MaterialItems\" />\n</message>\n<message
+        name=\"GetMaterialTextItemsMessage\">\n\t<part name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\"
+        />\n\t<part name=\"materialOutputType\" type=\"tns:MaterialOutputType\" />\n\t<part
+        name=\"options\" type=\"tns:MaterialItemFilter\" />\n</message>\n<message
+        name=\"GetMaterialTextItemsResponseMessage\">\n\t<part name=\"materialItems\"
+        type=\"tns:MaterialItems\" />\n</message>\n<message name=\"GetMaterialHTMLItemsMessage\">\n\t<part
+        name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"materialOutputType\"
+        type=\"tns:MaterialOutputType\" />\n\t<part name=\"options\" type=\"tns:MaterialItemFilter\"
+        />\n</message>\n<message name=\"GetMaterialHTMLItemsResponseMessage\">\n\t<part
+        name=\"materialItems\" type=\"tns:MaterialItems\" />\n</message>\n<message
+        name=\"GetMaterialIncentiveVoucherItemsMessage\">\n\t<part name=\"affiliateSiteID\"
+        type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"materialOutputType\" type=\"tns:MaterialOutputType\"
+        />\n\t<part name=\"options\" type=\"tns:MaterialItemFilter\" />\n</message>\n<message
+        name=\"GetMaterialIncentiveVoucherItemsResponseMessage\">\n\t<part name=\"materialItems\"
+        type=\"tns:MaterialItems\" />\n</message>\n<message name=\"GetMaterialIncentiveOfferItemsMessage\">\n\t<part
+        name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"materialOutputType\"
+        type=\"tns:MaterialOutputType\" />\n\t<part name=\"options\" type=\"tns:MaterialItemFilter\"
+        />\n</message>\n<message name=\"GetMaterialIncentiveOfferItemsResponseMessage\">\n\t<part
+        name=\"materialItems\" type=\"tns:MaterialItems\" />\n</message>\n\n<message
+        name=\"GetClickTransactionsMessage\">\n\t<part name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\"
+        />\n\t<part name=\"options\" type=\"tns:ClickTransactionFilter\" />\n</message>\n<message
+        name=\"GetClickTransactionsResponseMessage\">\n\t<part name=\"clickTransactions\"
+        type=\"tns:ClickTransactions\" />\n</message>\n<message name=\"GetConversionTransactionsMessage\">\n\t<part
+        name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"options\"
+        type=\"tns:ConversionTransactionFilter\" />\n</message>\n<message name=\"GetConversionTransactionsResponseMessage\">\n\t<part
+        name=\"conversionTransactions\" type=\"tns:ConversionTransactions\" />\n</message>\n<message
+        name=\"CreateConversionTransactionMessage\">\n\t<part name=\"transactionType\"
+        type=\"tns:TransactionType\" />\n\t<part name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\"
+        />\n\t<part name=\"options\" type=\"tns:CreateConversionTransactionOptions\"
+        />\n</message>\n<message name=\"CreateConversionTransactionResponseMessage\">\n\t<part
+        name=\"transactionID\" type=\"xsd:nonNegativeInteger\" />\n</message>\n\n<message
+        name=\"GetReportAffiliateSiteMessage\">\n\t<part name=\"affiliateSiteID\"
+        type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"options\" type=\"tns:ReportAffiliateSiteFilter\"
+        />\n</message>\n<message name=\"GetReportAffiliateSiteResponseMessage\">\n\t<part
+        name=\"reportAffiliateSite\" type=\"tns:ReportData\" />\n</message>\n<message
+        name=\"GetReportCampaignMessage\">\n\t<part name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\"
+        />\n\t<part name=\"options\" type=\"tns:ReportCampaignFilter\" />\n</message>\n<message
+        name=\"GetReportCampaignResponseMessage\">\n\t<part name=\"reportCampaign\"
+        type=\"tns:ReportCampaign\" />\n</message>\n<message name=\"GetReportReferenceMessage\">\n\t<part
+        name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"options\"
+        type=\"tns:ReportReferenceFilter\" />\n</message>\n<message name=\"GetReportReferenceResponseMessage\">\n\t<part
+        name=\"reportReference\" type=\"tns:ReportReference\" />\n</message>\n\n<message
+        name=\"GetFeedsMessage\">\n\t<part name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\"
+        />\n\t<part name=\"options\" type=\"tns:FeedFilter\" />\n</message>\n<message
+        name=\"GetFeedsResponseMessage\">\n\t<part name=\"feeds\" type=\"tns:Feeds\"
+        />\n</message>\n<message name=\"GetFeedProductCategoriesMessage\">\n\t<part
+        name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\" />\n\t<part name=\"feedID\"
+        type=\"xsd:nonNegativeInteger\" />\n</message>\n<message name=\"GetFeedProductCategoriesResponseMessage\">\n\t<part
+        name=\"feedCategories\" type=\"tns:FeedCategories\" />\n</message>\n<message
+        name=\"GetFeedProductsMessage\">\n\t<part name=\"affiliateSiteID\" type=\"xsd:nonNegativeInteger\"
+        />\n\t<part name=\"options\" type=\"tns:FeedProductFilter\" />\n</message>\n<message
+        name=\"GetFeedProductsResponseMessage\">\n\t<part name=\"feedProducts\" type=\"tns:FeedProducts\"
+        />\n</message>\n\n<message name=\"GetPaymentsMessage\">\n\t<part name=\"options\"
+        type=\"tns:PaymentFilter\" />\n</message>\n<message name=\"GetPaymentsResponseMessage\">\n\t<part
+        name=\"payments\" type=\"tns:Payments\" />\n</message>\n\n<!-- Port Types
+        -->\n\n<portType name=\"AffiliateInterface\">\n\t<operation name=\"authenticate\">\n\t\t<input
+        message=\"tns:AuthenticateMessage\" />\n\t\t<output message=\"tns:AuthenticateResponseMessage\"
+        />\n\t</operation>\n\n\t<operation name=\"getAffiliateSites\">\n\t\t<input
+        message=\"tns:GetAffiliateSitesMessage\" />\n\t\t<output message=\"tns:GetAffiliateSitesResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getAffiliateSiteTypes\">\n\t\t<input
+        message=\"tns:GetAffiliateSiteTypesMessage\" />\n\t\t<output message=\"tns:GetAffiliateSiteTypesResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getAffiliateSiteCategories\">\n\t\t<input
+        message=\"tns:GetAffiliateSiteCategoriesMessage\" />\n\t\t<output message=\"tns:GetAffiliateSiteCategoriesResponseMessage\"
+        />\n\t</operation>\n\n\t<operation name=\"getCampaigns\">\n\t\t<input message=\"tns:GetCampaignsMessage\"
+        />\n\t\t<output message=\"tns:GetCampaignsResponseMessage\" />\n\t</operation>\n\t<operation
+        name=\"getCampaignCategories\">\n\t\t<input message=\"tns:GetCampaignCategoriesMessage\"
+        />\n\t\t<output message=\"tns:GetCampaignCategoriesResponseMessage\" />\n\t</operation>\n\t<operation
+        name=\"getCampaignCommissionExtended\">\n\t\t<input message=\"tns:GetCampaignCommissionExtendedMessage\"
+        />\n\t\t<output message=\"tns:GetCampaignCommissionExtendedResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"changeCampaignSubscription\">\n\t\t<input
+        message=\"tns:ChangeCampaignSubscriptionMessage\" />\n\t\t<output message=\"tns:ChangeCampaignSubscriptionResponseMessage\"
+        />\n\t</operation>\n\n\t<operation name=\"getCampaignNewsItems\">\n\t\t<input
+        message=\"tns:GetCampaignNewsItemsMessage\" />\n\t\t<output message=\"tns:GetCampaignNewsItemsResponseMessage\"
+        />\n\t</operation>\n\n\t<operation name=\"getMaterialBannerDimensions\">\n\t\t<input
+        message=\"tns:GetMaterialBannerDimensionsMessage\" />\n\t\t<output message=\"tns:GetMaterialBannerDimensionsResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getMaterialBannerImageItems\">\n\t\t<input
+        message=\"tns:GetMaterialBannerImageItemsMessage\" />\n\t\t<output message=\"tns:GetMaterialBannerImageItemsResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getMaterialBannerFlashItems\">\n\t\t<input
+        message=\"tns:GetMaterialBannerFlashItemsMessage\" />\n\t\t<output message=\"tns:GetMaterialBannerFlashItemsResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getMaterialTextItems\">\n\t\t<input
+        message=\"tns:GetMaterialTextItemsMessage\" />\n\t\t<output message=\"tns:GetMaterialTextItemsResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getMaterialHTMLItems\">\n\t\t<input
+        message=\"tns:GetMaterialHTMLItemsMessage\" />\n\t\t<output message=\"tns:GetMaterialHTMLItemsResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getMaterialIncentiveVoucherItems\">\n\t\t<input
+        message=\"tns:GetMaterialIncentiveVoucherItemsMessage\" />\n\t\t<output message=\"tns:GetMaterialIncentiveVoucherItemsResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getMaterialIncentiveOfferItems\">\n\t\t<input
+        message=\"tns:GetMaterialIncentiveOfferItemsMessage\" />\n\t\t<output message=\"tns:GetMaterialIncentiveOfferItemsResponseMessage\"
+        />\n\t</operation>\n\n\t<operation name=\"getClickTransactions\">\n\t\t<input
+        message=\"tns:GetClickTransactionsMessage\" />\n\t\t<output message=\"tns:GetClickTransactionsResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getConversionTransactions\">\n\t\t<input
+        message=\"tns:GetConversionTransactionsMessage\" />\n\t\t<output message=\"tns:GetConversionTransactionsResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"createConversionTransaction\">\n\t\t<input
+        message=\"tns:CreateConversionTransactionMessage\" />\n\t\t<output message=\"tns:CreateConversionTransactionResponseMessage\"
+        />\n\t</operation>\n\n\t<operation name=\"getReportAffiliateSite\">\n\t\t<input
+        message=\"tns:GetReportAffiliateSiteMessage\" />\n\t\t<output message=\"tns:GetReportAffiliateSiteResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getReportCampaign\">\n\t\t<input message=\"tns:GetReportCampaignMessage\"
+        />\n\t\t<output message=\"tns:GetReportCampaignResponseMessage\" />\n\t</operation>\n\t<operation
+        name=\"getReportReference\">\n\t\t<input message=\"tns:GetReportReferenceMessage\"
+        />\n\t\t<output message=\"tns:GetReportReferenceResponseMessage\" />\n\t</operation>\n\n\t<operation
+        name=\"getFeeds\">\n\t\t<input message=\"tns:GetFeedsMessage\" />\n\t\t<output
+        message=\"tns:GetFeedsResponseMessage\" />\n\t</operation>\n\t<operation name=\"getFeedProductCategories\">\n\t\t<input
+        message=\"tns:GetFeedProductCategoriesMessage\" />\n\t\t<output message=\"tns:GetFeedProductCategoriesResponseMessage\"
+        />\n\t</operation>\n\t<operation name=\"getFeedProducts\">\n\t\t<input message=\"tns:GetFeedProductsMessage\"
+        />\n\t\t<output message=\"tns:GetFeedProductsResponseMessage\" />\n\t</operation>\n\n\t<operation
+        name=\"getPayments\">\n\t\t<input message=\"tns:GetPaymentsMessage\" />\n\t\t<output
+        message=\"tns:GetPaymentsResponseMessage\" />\n\t</operation>\n</portType>\n\n<!--
+        Bindings -->\n\n<binding name=\"AffiliateBinding\" type=\"tns:AffiliateInterface\">\n\t<soap:binding
+        style=\"rpc\"\n\t\ttransport=\"http://schemas.xmlsoap.org/soap/http\" />\n\n\t<operation
+        name=\"authenticate\">\n\t\t<soap:operation soapAction=\"https://ws.tradetracker.com/soap/affiliate/authenticate\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\n\t<operation name=\"getAffiliateSites\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getAffiliateSites\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getAffiliateSiteTypes\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getAffiliateSiteTypes\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getAffiliateSiteCategories\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getAffiliateSiteCategories\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\n\t<operation name=\"getCampaigns\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getCampaigns\" />\n\t\t<input>\n\t\t\t<soap:body
+        use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getCampaignCategories\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getCampaignCategories\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getCampaignCommissionExtended\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getCampaignCommissionExtended\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"changeCampaignSubscription\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/changeCampaignSubscription\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\n\t<operation name=\"getCampaignNewsItems\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getCampaignNewsItems\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\n\t<operation name=\"getMaterialBannerDimensions\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getMaterialBannerDimensions\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getMaterialBannerImageItems\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getMaterialBannerImageItems\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getMaterialBannerFlashItems\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getMaterialBannerFlashItems\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getMaterialTextItems\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getMaterialTextItems\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getMaterialHTMLItems\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getMaterialHTMLItems\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getMaterialIncentiveVoucherItems\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getMaterialIncentiveVoucherItems\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getMaterialIncentiveOfferItems\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getMaterialIncentiveOfferItems\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\n\t<operation name=\"getClickTransactions\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getClickTransactions\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getConversionTransactions\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getConversionTransactions\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"createConversionTransaction\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/createConversionTransaction\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\n\t<operation name=\"getReportAffiliateSite\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getReportAffiliateSite\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getReportCampaign\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getReportCampaign\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getReportReference\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getReportReference\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\n\t<operation name=\"getFeeds\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getFeeds\" />\n\t\t<input>\n\t\t\t<soap:body
+        use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getFeedProductCategories\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getFeedProductCategories\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\t<operation name=\"getFeedProducts\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getFeedProducts\"
+        />\n\t\t<input>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n\n\t<operation name=\"getPayments\">\n\t\t<soap:operation
+        soapAction=\"https://ws.tradetracker.com/soap/affiliate/getPayments\" />\n\t\t<input>\n\t\t\t<soap:body
+        use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</input>\n\t\t<output>\n\t\t\t<soap:body use=\"encoded\" namespace=\"https://ws.tradetracker.com/soap/affiliate\"\n\t\t\t\tencodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\n\t\t</output>\n\t</operation>\n</binding>\n\n<!-- Services -->\n\n<service
+        name=\"AffiliateService\">\n\t<port name=\"AffiliateBinding\" binding=\"tns:AffiliateBinding\">\n\t\t<soap:address
+        location=\"https://ws.tradetracker.com/soap/affiliate\" />\n\t</port>\n</service>\n\n</definitions>"
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:09 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:authenticate><tns:customerID><TRADETRACKER_USER_ID></tns:customerID><tns:passphrase><TRADETRACKER_API_KEY></tns:passphrase></tns:authenticate></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:10 GMT
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/authenticate"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '444'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:10 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog; path=/
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090; expires=Fri, 29-Sep-17
+        07:28:10 GMT; path=/; domain=.tradetracker.com; HttpOnly
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.04","duration_db":"0.00","duration_web":0.04,"memory_usage":"4.71","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db77ef82b0a48-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:authenticateResponse/></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:10 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:getAffiliateSites><tns:options></tns:options></tns:getAffiliateSites></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:10 GMT
+      Cookie:
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090;SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/getAffiliateSites"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '370'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:10 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.06","duration_db":"0.00","duration_web":0.06,"memory_usage":"4.82","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db78198a416c4-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getAffiliateSitesResponse><affiliateSites SOAP-ENC:arrayType="ns1:AffiliateSite[7]" xsi:type="ns1:AffiliateSites"><item xsi:type="ns1:AffiliateSite"><ID xsi:type="xsd:nonNegativeInteger">82695</ID><name xsi:type="xsd:string">AllaUpplevelser.se</name><URL xsi:type="xsd:normalizedString">http://allaupplevelser.se</URL><info xsi:type="ns1:AffiliateSiteInfo"><type xsi:type="ns1:AffiliateSiteType"><ID xsi:type="xsd:nonNegativeInteger">12</ID><name xsi:type="xsd:normalizedString">Annan</name></type><category xsi:type="ns1:AffiliateSiteCategory"><ID xsi:type="xsd:nonNegativeInteger">23</ID><name xsi:type="xsd:normalizedString">Sport och rekreation</name></category><description xsi:type="xsd:string">Hitta och jämför pris på Upplevelser</description><creationDate xsi:type="xsd:date">2011-06-27</creationDate><status xsi:type="ns1:AffiliateSiteStatus">accepted</status></info></item><item xsi:type="ns1:AffiliateSite"><ID xsi:type="xsd:nonNegativeInteger">235654</ID><name xsi:type="xsd:string">allbeauty</name><URL xsi:type="xsd:normalizedString">http://www.allbeauty.se</URL><info xsi:type="ns1:AffiliateSiteInfo"><type xsi:type="ns1:AffiliateSiteType"><ID xsi:type="xsd:nonNegativeInteger">5</ID><name xsi:type="xsd:normalizedString">Jämförelsesiter</name></type><category xsi:type="ns1:AffiliateSiteCategory"><ID xsi:type="xsd:nonNegativeInteger">7</ID><name xsi:type="xsd:normalizedString">Hälsa och skönhet</name></category><description xsi:type="xsd:string">Vi har samlat produkter inom hudvård, hårvård, smink, och andra skönhetsprodukter från flera av Sveriges ledande onlinebutiker. Samlat på ett och samma ställe är det enkelt för Dig att jämföra och enkelt kunna hitta de bästa priserna.</description><creationDate xsi:type="xsd:date">2015-12-08</creationDate><status xsi:type="ns1:AffiliateSiteStatus">accepted</status></info></item><item xsi:type="ns1:AffiliateSite"><ID xsi:type="xsd:nonNegativeInteger">220216</ID><name xsi:type="xsd:string">Förslag.se</name><URL xsi:type="xsd:normalizedString">http://www.forslag.se</URL><info xsi:type="ns1:AffiliateSiteInfo"><type xsi:type="ns1:AffiliateSiteType"><ID xsi:type="xsd:nonNegativeInteger">8</ID><name xsi:type="xsd:normalizedString">Directory- och Indexsiter</name></type><category xsi:type="ns1:AffiliateSiteCategory"><ID xsi:type="xsd:nonNegativeInteger">6</ID><name xsi:type="xsd:normalizedString">E-handel och shopping</name></category><description xsi:type="xsd:string">Hitta det mesta av det bästa online</description><creationDate xsi:type="xsd:date">2015-05-22</creationDate><status xsi:type="ns1:AffiliateSiteStatus">accepted</status></info></item><item xsi:type="ns1:AffiliateSite"><ID xsi:type="xsd:nonNegativeInteger">82707</ID><name xsi:type="xsd:string">Mobileronline.se</name><URL xsi:type="xsd:normalizedString">http://www.mobileronline.se</URL><info xsi:type="ns1:AffiliateSiteInfo"><type xsi:type="ns1:AffiliateSiteType"><ID xsi:type="xsd:nonNegativeInteger">12</ID><name xsi:type="xsd:normalizedString">Annan</name></type><category xsi:type="ns1:AffiliateSiteCategory"><ID xsi:type="xsd:nonNegativeInteger">25</ID><name xsi:type="xsd:normalizedString">Telekommunikation</name></category><description xsi:type="xsd:string">Hitta och Jämför pris på mobiler</description><creationDate xsi:type="xsd:date">2011-06-27</creationDate><status xsi:type="ns1:AffiliateSiteStatus">accepted</status></info></item><item xsi:type="ns1:AffiliateSite"><ID xsi:type="xsd:nonNegativeInteger">82708</ID><name xsi:type="xsd:string">Parfymeronline.se</name><URL xsi:type="xsd:normalizedString">http://www.parfymeronline.se</URL><info xsi:type="ns1:AffiliateSiteInfo"><type xsi:type="ns1:AffiliateSiteType"><ID xsi:type="xsd:nonNegativeInteger">12</ID><name xsi:type="xsd:normalizedString">Annan</name></type><category xsi:type="ns1:AffiliateSiteCategory"><ID xsi:type="xsd:nonNegativeInteger">7</ID><name xsi:type="xsd:normalizedString">Hälsa och skönhet</name></category><description xsi:type="xsd:string">Hitta och jämför pris på parfymer online.</description><creationDate xsi:type="xsd:date">2011-06-27</creationDate><status xsi:type="ns1:AffiliateSiteStatus">accepted</status></info></item><item xsi:type="ns1:AffiliateSite"><ID xsi:type="xsd:nonNegativeInteger">144317</ID><name xsi:type="xsd:string">SEM Sweden</name><URL xsi:type="xsd:normalizedString">http://www.google.se</URL><info xsi:type="ns1:AffiliateSiteInfo"><type xsi:type="ns1:AffiliateSiteType"><ID xsi:type="xsd:nonNegativeInteger">9</ID><name xsi:type="xsd:normalizedString">Sökordsmarknadsföring (SEM)</name></type><category xsi:type="ns1:AffiliateSiteCategory"><ID xsi:type="xsd:nonNegativeInteger">20</ID><name xsi:type="xsd:normalizedString">Annat</name></category><description xsi:type="xsd:string">Sökordsmarknadsföring i Sverige</description><creationDate xsi:type="xsd:date">2013-04-18</creationDate><status xsi:type="ns1:AffiliateSiteStatus">accepted</status></info></item><item xsi:type="ns1:AffiliateSite"><ID xsi:type="xsd:nonNegativeInteger">82709</ID><name xsi:type="xsd:string">Shopia</name><URL xsi:type="xsd:normalizedString">http://www.shopia.eu</URL><info xsi:type="ns1:AffiliateSiteInfo"><type xsi:type="ns1:AffiliateSiteType"><ID xsi:type="xsd:nonNegativeInteger">12</ID><name xsi:type="xsd:normalizedString">Annan</name></type><category xsi:type="ns1:AffiliateSiteCategory"><ID xsi:type="xsd:nonNegativeInteger">6</ID><name xsi:type="xsd:normalizedString">E-handel och shopping</name></category><description xsi:type="xsd:string">Shopia.eu hjälper dig att på ett enkelt sätt hitta onlinebutiker, varumärken, produkter och kampanjer på nätet.</description><creationDate xsi:type="xsd:date">2011-06-27</creationDate><status xsi:type="ns1:AffiliateSiteStatus">accepted</status></info></item></affiliateSites></ns1:getAffiliateSitesResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:10 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:getConversionTransactions><tns:options><tns:registrationDateFrom>2014-10-10</tns:registrationDateFrom><tns:registrationDateTo>2014-10-11</tns:registrationDateTo></tns:options><tns:affiliateSiteID>82695</tns:affiliateSiteID></tns:getConversionTransactions></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:10 GMT
+      Cookie:
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090;SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/getConversionTransactions"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '556'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:11 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.06","duration_db":"0.00","duration_web":0.06,"memory_usage":"4.85","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db7842dea168e-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getConversionTransactionsResponse><conversionTransactions SOAP-ENC:arrayType="ns1:ConversionTransaction[0]" xsi:type="ns1:ConversionTransactions"/></ns1:getConversionTransactionsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:11 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:getConversionTransactions><tns:options><tns:registrationDateFrom>2014-10-10</tns:registrationDateFrom><tns:registrationDateTo>2014-10-11</tns:registrationDateTo></tns:options><tns:affiliateSiteID>235654</tns:affiliateSiteID></tns:getConversionTransactions></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:11 GMT
+      Cookie:
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090;SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/getConversionTransactions"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '557'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:11 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.06","duration_db":"0.00","duration_web":0.06,"memory_usage":"4.85","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db7862fc03726-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getConversionTransactionsResponse><conversionTransactions SOAP-ENC:arrayType="ns1:ConversionTransaction[0]" xsi:type="ns1:ConversionTransactions"/></ns1:getConversionTransactionsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:11 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:getConversionTransactions><tns:options><tns:registrationDateFrom>2014-10-10</tns:registrationDateFrom><tns:registrationDateTo>2014-10-11</tns:registrationDateTo></tns:options><tns:affiliateSiteID>220216</tns:affiliateSiteID></tns:getConversionTransactions></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:11 GMT
+      Cookie:
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090;SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/getConversionTransactions"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '557'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:11 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.06","duration_db":"0.00","duration_web":0.06,"memory_usage":"4.84","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db787a8df3726-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getConversionTransactionsResponse><conversionTransactions SOAP-ENC:arrayType="ns1:ConversionTransaction[0]" xsi:type="ns1:ConversionTransactions"/></ns1:getConversionTransactionsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:11 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:getConversionTransactions><tns:options><tns:registrationDateFrom>2014-10-10</tns:registrationDateFrom><tns:registrationDateTo>2014-10-11</tns:registrationDateTo></tns:options><tns:affiliateSiteID>82707</tns:affiliateSiteID></tns:getConversionTransactions></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:11 GMT
+      Cookie:
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090;SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/getConversionTransactions"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '556'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:11 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.05","duration_db":"0.00","duration_web":0.05,"memory_usage":"4.85","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db788edf616c4-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getConversionTransactionsResponse><conversionTransactions SOAP-ENC:arrayType="ns1:ConversionTransaction[0]" xsi:type="ns1:ConversionTransactions"/></ns1:getConversionTransactionsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:11 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:getConversionTransactions><tns:options><tns:registrationDateFrom>2014-10-10</tns:registrationDateFrom><tns:registrationDateTo>2014-10-11</tns:registrationDateTo></tns:options><tns:affiliateSiteID>82708</tns:affiliateSiteID></tns:getConversionTransactions></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:11 GMT
+      Cookie:
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090;SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/getConversionTransactions"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '556'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:12 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.06","duration_db":"0.00","duration_web":0.06,"memory_usage":"4.84","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db78b194237b0-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getConversionTransactionsResponse><conversionTransactions SOAP-ENC:arrayType="ns1:ConversionTransaction[0]" xsi:type="ns1:ConversionTransactions"/></ns1:getConversionTransactionsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:12 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:getConversionTransactions><tns:options><tns:registrationDateFrom>2014-10-10</tns:registrationDateFrom><tns:registrationDateTo>2014-10-11</tns:registrationDateTo></tns:options><tns:affiliateSiteID>144317</tns:affiliateSiteID></tns:getConversionTransactions></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:12 GMT
+      Cookie:
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090;SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/getConversionTransactions"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '557'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:12 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.07","duration_db":"0.00","duration_web":0.07,"memory_usage":"4.85","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db78dcaec37b0-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getConversionTransactionsResponse><conversionTransactions SOAP-ENC:arrayType="ns1:ConversionTransaction[2]" xsi:type="ns1:ConversionTransactions"><item xsi:type="ns1:ConversionTransaction"><ID xsi:type="xsd:nonNegativeInteger">1155747527</ID><campaign xsi:type="ns1:Campaign"><ID xsi:type="xsd:nonNegativeInteger">11456</ID><name xsi:type="xsd:string">Shaver.se</name><URL xsi:type="xsd:normalizedString">http://www.shaver.se/</URL><info xsi:nil="true"/></campaign><campaignProduct xsi:type="ns1:CampaignProduct"><ID xsi:type="xsd:nonNegativeInteger">17244</ID><name xsi:type="xsd:string">Allmänt</name></campaignProduct><reference xsi:nil="true"/><transactionType xsi:type="ns1:TransactionType">sale</transactionType><transactionStatus xsi:type="ns1:TransactionStatus">accepted</transactionStatus><description xsi:nil="true"/><currency xsi:type="xsd:normalizedString">SEK</currency><commission xsi:type="xsd:decimal">21.392</commission><orderAmount xsi:type="xsd:decimal">382.00</orderAmount><IP xsi:type="xsd:normalizedString">95.197.41.145</IP><registrationDate xsi:type="xsd:dateTime">2014-10-10T10:18:34+02:00</registrationDate><assessmentDate xsi:type="xsd:dateTime">2014-11-10T10:30:57+01:00</assessmentDate><clickToConversion xsi:type="xsd:duration">PT4M38.818513S</clickToConversion><originatingClickDate xsi:type="xsd:dateTime">2014-10-10T10:13:55+02:00</originatingClickDate><rejectionReason xsi:nil="true"/><paidOut xsi:type="xsd:boolean">true</paidOut><countryCode xsi:type="xsd:string">SE</countryCode></item><item xsi:type="ns1:ConversionTransaction"><ID xsi:type="xsd:nonNegativeInteger">1156008508</ID><campaign xsi:type="ns1:Campaign"><ID xsi:type="xsd:nonNegativeInteger">11456</ID><name xsi:type="xsd:string">Shaver.se</name><URL xsi:type="xsd:normalizedString">http://www.shaver.se/</URL><info xsi:nil="true"/></campaign><campaignProduct xsi:type="ns1:CampaignProduct"><ID xsi:type="xsd:nonNegativeInteger">17244</ID><name xsi:type="xsd:string">Allmänt</name></campaignProduct><reference xsi:nil="true"/><transactionType xsi:type="ns1:TransactionType">sale</transactionType><transactionStatus xsi:type="ns1:TransactionStatus">accepted</transactionStatus><description xsi:nil="true"/><currency xsi:type="xsd:normalizedString">SEK</currency><commission xsi:type="xsd:decimal">25.032</commission><orderAmount xsi:type="xsd:decimal">447.00</orderAmount><IP xsi:type="xsd:normalizedString">77.218.251.210</IP><registrationDate xsi:type="xsd:dateTime">2014-10-10T14:24:33+02:00</registrationDate><assessmentDate xsi:type="xsd:dateTime">2014-11-10T14:31:24+01:00</assessmentDate><clickToConversion xsi:type="xsd:duration">PT4M24.135207S</clickToConversion><originatingClickDate xsi:type="xsd:dateTime">2014-10-10T14:20:09+02:00</originatingClickDate><rejectionReason xsi:nil="true"/><paidOut xsi:type="xsd:boolean">true</paidOut><countryCode xsi:type="xsd:string">SE</countryCode></item></conversionTransactions></ns1:getConversionTransactionsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:12 GMT
+- request:
+    method: post
+    uri: https://ws.tradetracker.com/soap/affiliate
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ws.tradetracker.com/soap/affiliate"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:getConversionTransactions><tns:options><tns:registrationDateFrom>2014-10-10</tns:registrationDateFrom><tns:registrationDateTo>2014-10-11</tns:registrationDateTo></tns:options><tns:affiliateSiteID>82709</tns:affiliateSiteID></tns:getConversionTransactions></env:Body></env:Envelope>
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.7.1, ruby 2.2.1 (2015-02-26))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Sep 2016 07:28:12 GMT
+      Cookie:
+      - __cfduid=d7ac92ce896080bba67a66ecb04758c7f1475134090;SID=r0lo5fvtjt93ok1i1do8bjvovbcsoiog
+      Soapaction:
+      - '"https://ws.tradetracker.com/soap/affiliate/getConversionTransactions"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '556'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Sep 2016 07:28:12 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      X-Performance-Stats:
+      - '{"hits":0,"miss":0,"sets":0,"duration_total":"0.06","duration_db":"0.00","duration_web":0.06,"memory_usage":"4.85","request_uri":"\/soap\/affiliate"}'
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2e9db7904c8d37b0-ARN
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="https://ws.tradetracker.com/soap/affiliate" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><ns1:getConversionTransactionsResponse><conversionTransactions SOAP-ENC:arrayType="ns1:ConversionTransaction[0]" xsi:type="ns1:ConversionTransactions"/></ns1:getConversionTransactionsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+    http_version: 
+  recorded_at: Thu, 29 Sep 2016 07:28:12 GMT
+recorded_with: VCR 2.9.3
