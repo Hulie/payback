@@ -62,6 +62,7 @@ http_interactions:
                         }
                     ],
                     "platform": "iphone",
+                    "referrer": "http:\/\/exempel.com\/party.html",
                     "status": 5
                 }
             ]

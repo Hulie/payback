@@ -42,6 +42,7 @@ module Payback
             network: 'adrecord',
             program: item['program']['name'],
             status: item['status'],
+            referrer: item['referrer'],
             timestamp: item['changes'].find do |obj|
               obj['type'] == 'transaction registered'
             end['date']

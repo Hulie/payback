@@ -18,6 +18,7 @@ describe Payback::Networks::Adrecord do
         record.timestamp.must_equal Time.parse('2012-09-17 18:00:51')
         record.program.must_equal 'Kwik-E-Mart'
         record.status.must_equal 5
+        record.referrer.must_equal 'http://exempel.com/party.html'
       end
     end
   end
