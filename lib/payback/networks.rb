@@ -1,4 +1,3 @@
-
 require 'payback/networks/base'
 require 'payback/networks/adrecord'
 require 'payback/networks/adtraction'
