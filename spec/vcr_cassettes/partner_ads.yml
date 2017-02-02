@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://www.partner-ads.com/dk/vissalg_xml.php?key=<PARTNER_ADS_API_KEY>
+    uri: https://www.partner-ads.com/dk/vissalg_xml.php?key=<PARTNER_ADS_API_KEY>
     body:
       encoding: US-ASCII
       string: fra=14-10-10&til=14-10-11
