@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'excon', '~> 0.42', '>= 0.42.0'
   spec.add_dependency 'savon', '~> 2.11.1', '>= 2.0.0'
-  spec.add_dependency 'mechanize', '~> 2.7', '>= 2.7.3'
   spec.add_dependency 'ruby-hmac', '~> 0.4', '>= 0.4.0'
   spec.add_dependency 'httpclient', '~> 2.6'
 
