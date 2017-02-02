@@ -4,7 +4,7 @@ module Payback
 
       required_credentials :api_key
 
-      URL = 'http://www.partner-ads.com/dk/vissalg_xml.php'
+      URL = 'https://www.partner-ads.com/dk/vissalg_xml.php'
 
       private
 

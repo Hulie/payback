@@ -17,6 +17,7 @@ describe Payback::Networks::Webgains do
         record.channel.must_equal 'example.com'
         record.timestamp.must_equal Time.parse('2014-10-10T11:02:48')
         record.program.must_equal 'Kwik-E-Mart'
+        record.referrer.must_equal 'http://example.com/products'
       end
     end
   end
