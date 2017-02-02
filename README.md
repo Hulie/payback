@@ -1,6 +1,6 @@
 # Payback
 
-TODO: Write a gem description
+A ruby gem to retrieve conversions from affiliate networks.
 
 ## Installation
 
@@ -11,10 +11,6 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install payback
 
 ## Usage
 
@@ -32,6 +28,20 @@ client.since(7)
 client.between('2014-01-01', '2014-02-01')
 
 ```
+
+## Conversion attributes
+All attributes are not supported by some networks.
+
+- UID
+- EPI
+- Commission
+- Currency
+- Network
+- Channel
+- Program
+- Status
+- Timestamp
+- Referrer
 
 ## Contributing
 
