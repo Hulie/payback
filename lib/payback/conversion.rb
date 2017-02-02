@@ -1,16 +1,6 @@
 module Payback
   class Conversion
 
-    # UID
-    # EPI
-    # Commission
-    # Currency
-    # Network
-    # Channel
-    # Program
-    # Status
-    # Timestamp
-
     ATTRIBUTES = %w(uid epi commission currency network
       channel program status timestamp referrer)
 
