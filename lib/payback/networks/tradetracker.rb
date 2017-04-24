@@ -9,6 +9,8 @@ module Payback
 
       required_credentials :user_id, :api_key
 
+      attr_writer :read_timeout
+
       URL = "http://ws.tradetracker.com/soap/affiliate?wsdl"
 
       private
@@ -32,10 +34,14 @@ module Payback
         end.flatten
       end
 
+      def read_timeout
+        @read_timeout || 300
+      end
+
       private
 
         def client
-          @client ||= Savon.client(wsdl: URL)
+          @client ||= Savon.client(wsdl: URL, read_timeout: read_timeout)
         end
 
         def auth_cookies
