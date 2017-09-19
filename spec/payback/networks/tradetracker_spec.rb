@@ -18,6 +18,7 @@ describe Payback::Networks::Tradetracker do
         record.timestamp.must_equal Time.parse('2014-10-10 10:18:34 +0200')
         record.program.must_equal 'foobar.com'
         record.clicked_at.must_equal Time.parse('2014-10-10 10:13:55 +0200')
+        record.clicked_at.must_be :<, record.timestamp
       end
     end
   end

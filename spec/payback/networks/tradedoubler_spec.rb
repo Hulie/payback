@@ -18,6 +18,7 @@ describe Payback::Networks::Tradedoubler do
         record.timestamp.must_equal Time.parse('2014-10-10 00:13:05 CEST')
         record.program.must_equal 'Kwik-E-Mart'
         record.clicked_at.must_equal Time.parse('2014-10-10 00:09:40 +0200')
+        record.clicked_at.must_be :<, record.timestamp
       end
     end
   end

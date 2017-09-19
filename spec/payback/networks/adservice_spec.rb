@@ -20,6 +20,7 @@ describe Payback::Networks::Adservice do
         record.status.must_equal 'approve'
         record.referrer.must_equal nil
         record.clicked_at.must_equal Time.parse('2017-08-23 19:41:21 +0200')
+        record.clicked_at.must_be :<, record.timestamp
       end
     end
   end
