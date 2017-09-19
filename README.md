@@ -32,16 +32,17 @@ client.between('2014-01-01', '2014-02-01')
 ## Conversion attributes
 All attributes are not supported by some networks.
 
-- UID
-- EPI
-- Commission
-- Currency
-- Network
-- Channel
-- Program
-- Status
-- Timestamp
-- Referrer
+- uid
+- epi
+- commission
+- currency
+- network
+- channel
+- program
+- status
+- timestamp
+- referrer
+- clicked_at
 
 ## Contributing
 
