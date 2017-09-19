@@ -22,10 +22,10 @@ Payback.networks
 client = Payback(:tradedoubler)
 
 # Get conversions for last 7 days
-client.since(7)
+client.since(7) # => [<Conversion>,]
 
 # Get conversions for given time period
-client.between('2014-01-01', '2014-02-01')
+client.between('2014-01-01', '2014-02-01') # => [<Conversion>,]
 
 ```
 
