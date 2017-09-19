@@ -55,7 +55,8 @@ module Payback
             channel: item['channelName'],
             commission: item['commission'],
             timestamp: item['transactionDate'],
-            referrer: item['referrer']
+            referrer: item['referrer'],
+            clicked_at: item['clickDate']
           )
         end
       end

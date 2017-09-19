@@ -34,7 +34,8 @@ module Payback
             channel: safe_extractor(node, 'campaignName'),
             commission: safe_extractor(node, 'commission'),
             timestamp: safe_extractor(node, 'date'),
-            referrer: safe_extractor(node, 'referrer')
+            referrer: safe_extractor(node, 'referrer'),
+            clicked_at: safe_extractor(node, 'clickthroughTime')
           )
         end
       end

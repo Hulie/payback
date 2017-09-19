@@ -2,7 +2,7 @@ module Payback
   class Conversion
 
     ATTRIBUTES = %w(uid epi commission currency network
-      channel program status timestamp referrer)
+      channel program status timestamp referrer clicked_at)
 
     attr_accessor *ATTRIBUTES
 
@@ -14,6 +14,10 @@ module Payback
 
     def timestamp=(string)
       @timestamp = string ? Time.parse(string) : nil
+    end
+
+    def clicked_at=(string)
+      @clicked_at = string ? Time.parse(string) : nil
     end
 
     def commission=(value)

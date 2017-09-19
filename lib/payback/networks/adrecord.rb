@@ -43,6 +43,7 @@ module Payback
             program: item['program']['name'],
             status: item['status'],
             referrer: item['referrer'],
+            clicked_at: item['click'],
             timestamp: item['changes'].find do |obj|
               obj['type'] == 'transaction registered'
             end['date']

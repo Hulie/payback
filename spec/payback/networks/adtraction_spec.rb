@@ -18,6 +18,7 @@ describe Payback::Networks::Adtraction do
         record.timestamp.must_equal Time.parse('2012-09-18T11:42:30+0200')
         record.program.must_equal 'Kwik-E-Mart'
         record.referrer.must_equal 'http://www.example.com/ads'
+        record.clicked_at.must_equal Time.parse('2012-09-18 11:38:07 +0200')
       end
     end
   end

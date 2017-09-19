@@ -18,6 +18,7 @@ describe Payback::Networks::Webgains do
         record.timestamp.must_equal Time.parse('2014-10-10T11:02:48')
         record.program.must_equal 'Kwik-E-Mart'
         record.referrer.must_equal 'http://example.com/products'
+        record.clicked_at.must_equal Time.parse('2014-10-10 10:26:59 +0200')
       end
     end
   end

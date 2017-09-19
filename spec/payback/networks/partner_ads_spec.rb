@@ -17,6 +17,7 @@ describe Payback::Networks::PartnerAds do
         record.channel.must_equal 'example.com'
         record.timestamp.must_equal Time.parse('10-10-2014 09:34:30')
         record.program.must_equal 'Kwik-E-Mart'
+        record.clicked_at.must_equal nil
       end
     end
   end

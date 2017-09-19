@@ -17,6 +17,7 @@ describe Payback::Networks::Cj do
         record.channel.must_equal '555'
         record.timestamp.must_equal Time.parse('2012-09-17T03:00:13-0700')
         record.program.must_equal 'Kwik-E-Mart'
+        record.clicked_at.must_equal Time.parse('2012-09-17 01:51:07 -0700')
       end
     end
   end
