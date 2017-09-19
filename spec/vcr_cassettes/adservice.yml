@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://publisher.adservice.com/cgi-bin/publisher/API/Statistics.pl/orders?from_date=2017-08-20&status=approve&to_date=2017-08-31
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.59.0
+      Cookie:
+      - LoginToken=<ADSERVICE_API_KEY>; UID=<ADSERVICE_USER_ID>;
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 19 Sep 2017 10:31:21 GMT
+      Server:
+      - Apache
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT, DELETE
+      Content-Length:
+      - '946'
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"opt":{"status":"approve","from_date":"2017-08-20","orderCount":1,"agent_id":"<ADSERVICE_USER_ID>","totalVariables":null,"to_date":"2017-08-31"},"rows":[{"invoiceAmount":"0.00","orderChangeName":null,"fingerprint":"9d2284022bbe317bacc23cea72371234","countryCode":"dk","reject_reason":null,"stamp":"2017-08-23
+        19:45:48","camp_id":"1284","orderChangeIp":null,"user_agent":"Mozilla/5.0
+        (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101
+        Safari/537.36","cookie_time2":"00:04:27","description":null,"pricevariable":"","camp_title":"Foobar.dk","status":"approve","cookie_user_id":"123456","city":"Fredensborg","pay_for_sale":"0.00","cookie_stamp":"2017-08-23
+        19:41:21","userId":null,"order_id":"","userClass":null,"record_id":"123456789","medianame":"example.com","media_id":"1358","amount":"0","totalPay":75,"currency_name":"DKK","sub":"abc123","changestamp":null,"pay_for_lead":"75.00"}]}'
+    http_version:
+  recorded_at: Tue, 19 Sep 2017 10:31:21 GMT
+recorded_with: VCR 2.9.3
