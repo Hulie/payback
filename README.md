@@ -21,6 +21,10 @@ Payback.networks
 # Instantiate network client
 client = Payback(:tradedoubler)
 
+# Authenticate
+client.credentials # => [:api_key]
+client.api_key = "<API_KEY>" # or fallbacks to ENV['TRADEDOUBLER_API_KEY']
+
 # Get conversions for last 7 days
 client.since(7) # => [<Conversion>,]
 
@@ -47,7 +51,7 @@ All attributes are not supported by some networks.
 - uid
 - epi
 - commission
-- currency
+- currency (ISO 4217)
 - network
 - channel
 - program
