@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.awin.com/publishers/<AWIN_USER_ID>/transactions/?accessToken=<AWIN_API_KEY>&endDate=2017-09-25T23:59:59&startDate=2017-09-24T00:00:00&timezone=UTC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.59.0
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      X-Application-Context:
+      - API-Gateway:live
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 27 Sep 2017 14:07:23 GMT
+    body:
+      encoding: UTF-8
+      string: '[{"id":313683240,"url":"http://www.example.com","advertiserId":12345,"publisherId":<AWIN_USER_ID>,"commissionSharingPublisherId":null,"siteName":"http://www.example.com","commissionStatus":"pending","commissionAmount":{"amount":65.28,"currency":"SEK"},"saleAmount":{"amount":816.00,"currency":"SEK"},"clickRefs":{"clickRef":"abc123","clickRef2":"aab7825f3a0043a2b9014dbf1876d8b7"},"clickDate":"2017-09-24T14:39:00","transactionDate":"2017-09-24T14:39:00","validationDate":null,"type":"Commission
+        group transaction","declineReason":null,"voucherCodeUsed":false,"voucherCode":null,"lapseTime":0,"amended":false,"amendReason":null,"oldSaleAmount":null,"oldCommissionAmount":null,"clickDevice":"Unknown","transactionDevice":"Unknown","publisherUrl":"","advertiserCountry":"SE","orderRef":null,"customParameters":null,"transactionParts":[{"commissionGroupId":131877,"amount":816.00,"commissionAmount":65.28,"commissionGroupCode":"DEFAULT","commissionGroupName":"Default"}],"paidToPublisher":false,"paymentId":0,"transactionQueryId":0,"originalSaleAmount":null}]'
+    http_version:
+  recorded_at: Wed, 27 Sep 2017 14:07:23 GMT
+recorded_with: VCR 2.9.3

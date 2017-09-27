@@ -44,6 +44,7 @@ client.between('2014-01-01', '2014-02-01') # => [<Conversion>,]
 - tradetracker
 - webgains
 - zanox
+- awin
 
 ## Conversion attributes
 All attributes are not supported by some networks.
