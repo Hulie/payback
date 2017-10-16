@@ -9,12 +9,18 @@ module Payback
 
       required_credentials :username, :password
 
+      attr_writer :read_timeout
+
       private
 
       def client
-        @client ||= Savon.client(log_level: :info) do
+        @client ||= Savon.client(log_level: :info, read_timeout: read_timeout) do
           wsdl "http://ws.webgains.com/aws.php"
         end
+      end
+
+      def read_timeout
+        @read_timeout || 300
       end
 
       def fetch(from, to)
