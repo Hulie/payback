@@ -45,6 +45,7 @@ client.between('2014-01-01', '2014-02-01') # => [<Conversion>,]
 - webgains
 - zanox
 - awin
+- netbooster
 
 ## Conversion attributes
 All attributes are not supported by some networks.
