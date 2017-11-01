@@ -18,7 +18,7 @@ describe Payback::Networks::Double do
         record.timestamp.must_equal Time.parse('2014-01-07T12:00:12.862Z')
         record.program.must_equal 'Kwik-E-Mart'
         record.status.must_equal 'allowed'
-        record.clicked_at.must_equal nil
+        record.clicked_at.must_be_nil
       end
     end
   end
