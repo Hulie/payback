@@ -85,6 +85,8 @@ module Payback
         if host = URI::parse(url).host
           host.downcase
         end
+      rescue URI::InvalidURIError
+        nil
       end
 
       def safe_extractor(node, selector)
