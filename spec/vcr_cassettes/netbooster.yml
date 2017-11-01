@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://campaigns.netboosteraffiliate.com/api/<NETBOOSTER_API_KEY>/Conversion?dateFrom=2017-11-01&dateTo=2017-11-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.59.0
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.5
+      X-Execution-Time:
+      - 1125ms
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 01 Nov 2017 10:20:28 GMT
+      Content-Length:
+      - '554'
+    body:
+      encoding: UTF-8
+      string: '[{"ConversionId":"ca5b712a8f8552359f99e174","ClickId":"5b712a8f842f959f9999d4ca","CampaignId":"8eb9-d9a0b7b48772-6e096e32-22cc-4225","Name":"Kwik-E-Mart.com","ConversionDatetime":"2017-11-01
+        10:12:39","ClickDatetime":"2017-11-01 09:53:33","ProviderInformation":{"subid1":"epi123","url":"https://example.com"},"Type":"Sales","Trigger":"","Payout":108.459227,"PayoutCurrency":"SEK","TransactionAmount":1183.6,"TransactionCurrency":"DKK","Status":"Approved"}]'
+    http_version:
+  recorded_at: Wed, 01 Nov 2017 10:20:29 GMT
+recorded_with: VCR 2.9.3
