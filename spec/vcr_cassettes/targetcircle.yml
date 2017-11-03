@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.targetcircle.com/api/v1/transactions?savedFrom=2017-11-01&savedTo=2017-11-02
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.55.0
+      X-Api-Token:
+      - "<TARGETCIRCLE_API_KEY>"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4134'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"token":"token","data":[{"status":"pending","adInventory":"SEM Suomi","adInventorySid":"abc123","offer":"The Drunken Clam","offerSid":"abc123","country":"fi","transactionType":"sale","productGroup":"Default","transactionId":"12345","trackingMethod":"local_cookie","currency":"EUR","transactionAmount":29.68,"payout":5.94,"saved":"2017-11-01
+        21:08:35","validationDate":null,"clickSaved":"2017-11-01 20:57:27","clickToConversionTime":"668","ip":"0.1.2.3","reference":{"ref1":"abc123","ref2":null,"ref3":null,"ref4":null,"ref5":null},"clickId":null,"sourceId":null,"gaid":null,"idfa":null,"waid":null,"slug":"123456789"}]}'
+    http_version:
+  recorded_at: Fri, 03 Nov 2017 11:30:08 GMT
+recorded_with: VCR 3.0.1
