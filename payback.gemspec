@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
 
   spec.add_development_dependency "vcr"
+  spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-minitest"
   spec.add_development_dependency "mocha"
   spec.add_development_dependency "webmock"
