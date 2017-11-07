@@ -10,7 +10,7 @@ module Payback
       required_credentials :api_key
 
       HOST = 'https://api.adtraction.com'
-      PATH = '/v1/affiliate/transactions'
+      PATH = '/v1/affiliate/transactions/combined'
       MAX_RETRIES = 6
 
       private
@@ -21,7 +21,9 @@ module Payback
           path: PATH,
           body: JSON.dump({
             fromDate: date_to_utc(from),
-            toDate: date_to_utc(to)
+            toDate: date_to_utc(to),
+            creditTransaction: false,
+            claim: false
           }),
           headers: { 'X-Token' => api_key, 'Accept' => 'application/json',
             'Content-Type' => 'application/json' },
@@ -49,14 +51,15 @@ module Payback
           Conversion.new(
             program: item['programName'],
             currency: item['currency'],
-            uid: item['transactionId'],
+            uid: [item['programId'], item['orderId']].join('-'),
             network: 'adtraction',
             epi: item['epi'],
             channel: item['channelName'],
             commission: item['commission'],
             timestamp: item['transactionDate'],
             referrer: item['referrer'],
-            clicked_at: item['clickDate']
+            clicked_at: item['clickDate'],
+            status: item['pending'] ? 'pending' : nil
           )
         end
       end
